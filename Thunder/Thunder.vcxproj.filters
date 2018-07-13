@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="boss.h">
+    <ClInclude Include="include\boss.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="BulletManager.h">
+    <ClInclude Include="include\BulletManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Protagonist.h">
+    <ClInclude Include="include\Protagonist.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

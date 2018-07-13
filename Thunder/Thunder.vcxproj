@@ -18,6 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\boss.h" />
+    <ClInclude Include="include\BulletManager.h" />
+    <ClInclude Include="include\Protagonist.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{343B15F9-C604-4C1D-B840-DAAF4E3C6212}</ProjectGuid>
@@ -114,11 +119,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="boss.h" />
-    <ClInclude Include="BulletManager.h" />
-    <ClInclude Include="Protagonist.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
