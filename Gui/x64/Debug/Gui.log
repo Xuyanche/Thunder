@@ -1,9 +1,23 @@
-﻿  Boss.cpp
-  playerfighter.cpp
-c:\users\lenovo\documents\project\thunder\gui\source\playerfighter.cpp(7): error C2027: 使用了未定义类型“QKeyEvent”
-  d:\programfiles\qt\5.11.1\msvc2017_64\include\qtwidgets\qgraphicsitem.h(73): note: 参见“QKeyEvent”的声明
-c:\users\lenovo\documents\project\thunder\gui\source\playerfighter.cpp(7): error C2227: “->key”的左边必须指向类/结构/联合/泛型类型
-c:\users\lenovo\documents\project\thunder\gui\source\playerfighter.cpp(10): error C2027: 使用了未定义类型“QKeyEvent”
-  d:\programfiles\qt\5.11.1\msvc2017_64\include\qtwidgets\qgraphicsitem.h(73): note: 参见“QKeyEvent”的声明
-c:\users\lenovo\documents\project\thunder\gui\source\playerfighter.cpp(10): error C2227: “->accept”的左边必须指向类/结构/联合/泛型类型
-c:\users\lenovo\documents\project\thunder\gui\source\playerfighter.cpp(11): error C2065: “W”: 未声明的标识符
+﻿  Moc'ing start.h...
+  Moc'ing include\flyingObject.h...
+  Rcc'ing start.qrc...
+  Uic'ing start.ui...
+  RCC: Warning: No resources in 'D:\寰愬欢鎴怽Documents\GitHub\Thunder\Gui\start.qrc'.
+  main.cpp
+  Bullet.cpp
+  FlyingObject.cpp
+  start.cpp
+d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(44): error C2976: “QList”: 模板 参数太少 (编译源文件 source\FlyingObject.cpp)
+  c:\qt\5.11.1\msvc2017_64\include\qtgui\qtextoption.h(52): note: 参见“QList”的声明 (编译源文件 source\FlyingObject.cpp)
+d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(49): error C2143: 语法错误: 缺少“;”(在“}”的前面) (编译源文件 source\FlyingObject.cpp)
+  moc_start.cpp
+d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(44): error C2976: “QList”: 模板 参数太少 (编译源文件 source\Bullet.cpp)
+  c:\qt\5.11.1\msvc2017_64\include\qtgui\qtextoption.h(52): note: 参见“QList”的声明 (编译源文件 source\Bullet.cpp)
+d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(49): error C2143: 语法错误: 缺少“;”(在“}”的前面) (编译源文件 source\Bullet.cpp)
+d:\徐延成\documents\github\thunder\gui\source\bullet.cpp(36): error C2659: “+=”: 作为左操作数 (编译源文件 source\Bullet.cpp)
+d:\徐延成\documents\github\thunder\gui\source\bullet.cpp(37): error C2659: “+=”: 作为左操作数 (编译源文件 source\Bullet.cpp)
+  moc_flyingObject.cpp
+  qrc_start.cpp
+d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(44): error C2976: “QList”: 模板 参数太少 (编译源文件 .\GeneratedFiles\Debug\moc_flyingObject.cpp)
+  c:\qt\5.11.1\msvc2017_64\include\qtgui\qtextoption.h(52): note: 参见“QList”的声明 (编译源文件 .\GeneratedFiles\Debug\moc_flyingObject.cpp)
+d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(49): error C2143: 语法错误: 缺少“;”(在“}”的前面) (编译源文件 .\GeneratedFiles\Debug\moc_flyingObject.cpp)
