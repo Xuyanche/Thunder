@@ -1,0 +1,9 @@
+﻿  Boss.cpp
+  playerfighter.cpp
+c:\users\lenovo\documents\project\thunder\gui\source\playerfighter.cpp(7): error C2027: 使用了未定义类型“QKeyEvent”
+  d:\programfiles\qt\5.11.1\msvc2017_64\include\qtwidgets\qgraphicsitem.h(73): note: 参见“QKeyEvent”的声明
+c:\users\lenovo\documents\project\thunder\gui\source\playerfighter.cpp(7): error C2227: “->key”的左边必须指向类/结构/联合/泛型类型
+c:\users\lenovo\documents\project\thunder\gui\source\playerfighter.cpp(10): error C2027: 使用了未定义类型“QKeyEvent”
+  d:\programfiles\qt\5.11.1\msvc2017_64\include\qtwidgets\qgraphicsitem.h(73): note: 参见“QKeyEvent”的声明
+c:\users\lenovo\documents\project\thunder\gui\source\playerfighter.cpp(10): error C2227: “->accept”的左边必须指向类/结构/联合/泛型类型
+c:\users\lenovo\documents\project\thunder\gui\source\playerfighter.cpp(11): error C2065: “W”: 未声明的标识符
