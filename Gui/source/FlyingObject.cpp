@@ -11,20 +11,7 @@ FlyingObject::FlyingObject(qreal wvalue, qreal hvalue, qreal speed, const QPixma
 		pixmaps.append(t);
 	}
 	
-	//scene->addItem(this);
+	scene->addItem(this);
 	
-}
-
-
-FlyingObject::~FlyingObject() {
-
-}
-
-
-
-
-
-void FlyingObject::hitCtrl() {
-
 }
 
