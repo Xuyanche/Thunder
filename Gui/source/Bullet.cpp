@@ -54,7 +54,7 @@ void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
 	painter->drawPixmap(0, 0, pixmaps.at(0));
-	//子弹类的parent指针指向产生他的那个飞机，同时在qt中一个graphicobjct的坐标是以他的parent作为坐标系的，故起始地点是（0，0）。
+	//自身带有painter
 	return;
 }
 
