@@ -5,7 +5,7 @@
 //qreal Ô¼µÈÓÚ double
 
 
-
+typedef QList<QPixmap> QPixmaps;
 
 
 
@@ -13,7 +13,7 @@ class FlyingObject : public QGraphicsObject {
 	
 	Q_OBJECT
 public:
-	FlyingObject(qreal wvalue, qreal hvalue, qreal spead, QPixmap &pic, QGraphicsScene *scene, QGraphicsItem* parent);
+	FlyingObject(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent);
 
 	~FlyingObject();
 
@@ -26,8 +26,8 @@ public:
 	qreal height;
 	qreal maxspeed;
 	qreal pixpos;
-	uint step;
-	QPixmap pixmap;
+	uint maxstep;
+	QPixmaps pixmaps;
 
 };
 

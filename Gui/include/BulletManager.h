@@ -18,7 +18,7 @@ public:
 	~Bullet();
 
 
-
+	void hitCtrl();
 
 
 
