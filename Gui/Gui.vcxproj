@@ -125,6 +125,10 @@
   <ItemGroup>
     <QtRcc Include="start.qrc" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\boss.h" />
+    <ClInclude Include="include\BulletManager.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

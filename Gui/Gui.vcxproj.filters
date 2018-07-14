@@ -52,4 +52,12 @@
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\boss.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BulletManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
