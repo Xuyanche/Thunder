@@ -1,9 +1,15 @@
 #include "../include/BulletManager.h"
+#include "../include/global.h"
+#include <math.h>
 
 
-Bullet::Bullet(qreal wvalue, qreal hvalue, qreal spead, const QPixmaps &pixs, QGraphicsScene *scene, QGraphicsItem* parent, int damagevalue, BelongTo belongvalue)
-	: FlyingObject(wvalue, hvalue, spead, pixs, scene, parent), damage(damagevalue), belong(belongvalue) {
-
+Bullet::Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QGraphicsScene *scene, QGraphicsItem* parent, qreal angle, int damagevalue, BelongTo belongvalue)
+	: FlyingObject(wvalue, hvalue, speed, pixs, scene, parent), damage(damagevalue), belong(belongvalue) {
+	xspeed = maxspeed * sin(angle);
+	yspeed = maxspeed * cos(angle);
+	if (belongvalue == Enemy) {
+		parent = 0;
+	}
 }
 
 Bullet::~Bullet() {
@@ -55,15 +61,19 @@ void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 
 
 
-void BulletManager::createBullet(BulletType typevalue, QGraphicsScene *scene) {
+void BulletManager::createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue) {
 	Bullet* newbullet;
+
+	QPixmaps tmp;
 
 	switch (typevalue) {
 	case Ordinary_Enemy:
-		newbullet = Bullet();
+		tmp.append(QPixmap(Enemybullet_Ordinary_Image));
+		newbullet = new Bullet(ENEMYBULLET_ORDINARY_WIDTH, ENEMYBULLET_ORDINARY_HEIGHT, ENEMYBULLET_ORDINARY_SPEED, tmp, scene, 0, anglevalue, ENEMYBULLET_ORDINARY_DAMAGE, Enemy);
 		break;
 	case Ordinary_Friend:
-		newbullet = Bullet();
+		tmp.append(QPixmap(Friendbullet_Ordinary_Image));
+		newbullet = new Bullet(FRIENDBULLET_ORDINARY_WIDTH, FRIENDBULLET_ORDINARY_HEIGHT, FRIENDBULLET_ORDINARY_SPEED, tmp, scene, 0, anglevalue, FRIENDBULLET_ORDINARY_DAMAGE, Friend);
 		break;
 	default:
 		break;

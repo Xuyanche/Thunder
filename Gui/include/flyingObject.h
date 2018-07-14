@@ -3,6 +3,7 @@
 #include <qgraphicsitem.h>
 #include <qgraphicsscene.h>
 #include <qpainter.h>
+#include "..\include\global.h"
 
 //qreal Ô¼µÈÓÚ double
 

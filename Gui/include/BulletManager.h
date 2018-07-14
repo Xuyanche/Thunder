@@ -6,7 +6,7 @@ using namespace std;
 
 
 enum BelongTo {
-	Enemy, Nutural, Self
+	Enemy, Nutural, Friend
 };
 enum BulletType {
 	Ordinary_Friend, Ordinary_Enemy
@@ -15,7 +15,7 @@ enum BulletType {
 
 class Bullet :public FlyingObject {
 public:
-	Bullet(qreal wvalue, qreal hvalue, qreal spead, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent, int damagevalue, BelongTo belongvalue);
+	Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent, qreal angle, int damagevalue, BelongTo belongvalue);
 	~Bullet();
 
 
@@ -40,7 +40,7 @@ public:
 
 class BulletManager {
 public:
-	void createBullet(BulletType typevalue, QGraphicsScene *scene);
+	void createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue);
 	
 
 	QList<Bullet*> bulletList;
