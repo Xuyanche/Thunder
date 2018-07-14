@@ -1,32 +1,23 @@
 #pragma once
 
-#include "BulletManager.h"
+#include "include/flyingObject.h"
+#include "include/BulletManager.h"
 
-class Boss
+class Boss :public FlyingObject
 {
 public:
-
 	Boss();
-	Boss(int PosX, int PosY, int Life);
+	Boss(qreal wvalue, qreal hvalue, qreal spead, QPixmap &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue);
 	~Boss();
 
-	//accessor
-	int getPosX();
-	int getPosY();
-	int getLifePoint();
+	void hitCtrl();
+	void damaged(Bullet* t);
+	void destroyed();
 
-	//mutator
-	void setPosX(const int NewPosX);
-	void setPosY(const int NewPosY);
-	void set(const int NewLife);
-
-	//Functions
-
+	void battlemode();
 
 private:
-	int LifePoint;
-	int PosX;
-	int PosY;
+	int health;
+
 
 };
-
