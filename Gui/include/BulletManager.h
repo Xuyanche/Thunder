@@ -1,77 +1,37 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include "../include/flyingObject.h"
 using namespace std;
 
 
 enum BelongTo {
-	Enemy, Friend, Self
+	Enemy, Nutural, Self
 };
 
 
 
-class Bullet {
+class Bullet :public FlyingObject {
 public:
 	Bullet();
-	Bullet(BelongTo BValue, int damageValue, double startX, double startY, double speed, double direction);
+	Bullet(qreal wvalue, qreal hvalue, qreal spead, QPixmap &pic, QGraphicsScene *scene, QGraphicsItem* parent);
 	~Bullet();
 
-	double getLocationX();
-	double getLocationY();
-	double getDamage();
-	double getBelong();
-
-	
-	void fly();
-	void setPosition(double x, double y);
-	void setDirection(double directionValue);
-	void setDamage(int damage);
-
-	Object* isHit();
 
 
 
-	void display();
 
-private:
-	double location_X;
-	double location_Y;
-	int damage;
+
+	qreal xspeed;
+	qreal yspeed;
+	int damange;
 	BelongTo belong;
-	double speed; // pixel/second
-	double direction;
-	
 
 };
 
 
 
 
-
-
-class BulletManager {
-public:
-	BulletManager();
-	~BulletManager();
-
-
-
-	void createBullet(BelongTo BValue, int damageValue, double startX, double startY, double speedvalue, double directionvalue);
-	
-
-
-
-
-
-
-	vector<Bullet*> exist;
-
-
-	
-
-
-
-};
 
 
 
