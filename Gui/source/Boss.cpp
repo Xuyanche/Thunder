@@ -33,7 +33,7 @@ void Boss::hitCtrl()
 void Boss::damaged(Bullet* t)
 {
 	health -= (t->damage);
-	t->destroy;
+	t->destroy();
 	if (health <= 0) {
 		destroyed();
 	}
