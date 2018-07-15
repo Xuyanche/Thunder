@@ -1,23 +1,4 @@
-﻿  Moc'ing start.h...
-  Moc'ing include\flyingObject.h...
-  Rcc'ing start.qrc...
-  Uic'ing start.ui...
-  RCC: Warning: No resources in 'D:\寰愬欢鎴怽Documents\GitHub\Thunder\Gui\start.qrc'.
-  main.cpp
-  Bullet.cpp
-  FlyingObject.cpp
-  start.cpp
-d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(44): error C2976: “QList”: 模板 参数太少 (编译源文件 source\FlyingObject.cpp)
-  c:\qt\5.11.1\msvc2017_64\include\qtgui\qtextoption.h(52): note: 参见“QList”的声明 (编译源文件 source\FlyingObject.cpp)
-d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(49): error C2143: 语法错误: 缺少“;”(在“}”的前面) (编译源文件 source\FlyingObject.cpp)
-  moc_start.cpp
-d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(44): error C2976: “QList”: 模板 参数太少 (编译源文件 source\Bullet.cpp)
-  c:\qt\5.11.1\msvc2017_64\include\qtgui\qtextoption.h(52): note: 参见“QList”的声明 (编译源文件 source\Bullet.cpp)
-d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(49): error C2143: 语法错误: 缺少“;”(在“}”的前面) (编译源文件 source\Bullet.cpp)
-d:\徐延成\documents\github\thunder\gui\source\bullet.cpp(36): error C2659: “+=”: 作为左操作数 (编译源文件 source\Bullet.cpp)
-d:\徐延成\documents\github\thunder\gui\source\bullet.cpp(37): error C2659: “+=”: 作为左操作数 (编译源文件 source\Bullet.cpp)
-  moc_flyingObject.cpp
-  qrc_start.cpp
-d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(44): error C2976: “QList”: 模板 参数太少 (编译源文件 .\GeneratedFiles\Debug\moc_flyingObject.cpp)
-  c:\qt\5.11.1\msvc2017_64\include\qtgui\qtextoption.h(52): note: 参见“QList”的声明 (编译源文件 .\GeneratedFiles\Debug\moc_flyingObject.cpp)
-d:\徐延成\documents\github\thunder\gui\include\flyingobject.h(49): error C2143: 语法错误: 缺少“;”(在“}”的前面) (编译源文件 .\GeneratedFiles\Debug\moc_flyingObject.cpp)
+﻿  Bullet.cpp
+  LINK : 没有找到 D:\徐延成\Documents\GitHub\Thunder\x64\Debug\\Gui.exe 或上一个增量链接没有生成它；正在执行完全链接
+Bullet.obj : error LNK2019: 无法解析的外部符号 "public: virtual __cdecl FlyingObject::~FlyingObject(void)" (??1FlyingObject@@UEAA@XZ)，该符号在函数 "public: virtual __cdecl Bullet::~Bullet(void)" (??1Bullet@@UEAA@XZ) 中被引用
+D:\徐延成\Documents\GitHub\Thunder\x64\Debug\\Gui.exe : fatal error LNK1120: 1 个无法解析的外部命令

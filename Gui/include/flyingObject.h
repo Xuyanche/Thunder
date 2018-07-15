@@ -25,6 +25,8 @@ public:
 	virtual void hitCtrl() = 0;
 	virtual void destroy() = 0;
 	virtual flyingObjectType getType() = 0;
+	
+	bool checkPos();
 
 
 	//x, y, z value is included in the qgraphicobject class
@@ -34,17 +36,6 @@ public:
 	qreal pixpos;
 	uint maxstep;
 	QPixmaps pixmaps;
-
-};
-
-
-
-class BulletManage {
-	
-	QList<> bulletList
-
-
-
 
 };
 
