@@ -3,8 +3,8 @@
 
 
 
-Boss::Boss(qreal wvalue, qreal hvalue, qreal spead, QPixmap & pic, QGraphicsScene * scene, QGraphicsItem * parent, int healthvalue)
-	:FlyingObject(wvalue, hvalue, spead, pic, scene, parent)
+Boss::Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue)
+	:FlyingObject(wvalue, hvalue, speed, pic, scene, parent)
 {
 	health = healthvalue;
 }
@@ -23,7 +23,7 @@ void Boss::hitCtrl()
 	{
 		if (i->type() == Bullet::Type) {
 			Bullet *t = (Bullet*)i;
-			if (t->belong == Self) {
+			if (t->belong ==Friend ) {
 				damaged(t);
 			}
 		}
@@ -32,25 +32,28 @@ void Boss::hitCtrl()
 
 void Boss::damaged(Bullet* t)
 {
-	health -= (t->damange);
-	t->destroyed();
+	health -= (t->damage);
+	t->destroy;
 	if (health <= 0) {
 		destroyed();
 	}
 }
 
-void Boss::destroyed()
+void Boss::destroy()
 {
 	delete this;
 }
 
-void Boss::battlemode()
+void Boss::Attack()
 {
-
-
-
-
-
+	int ShootAngle;
+	BulletManager BM;
+	for (ShootAngle = angle; ShootAngle <= 180; ShootAngle += 36) {
+		BM.createBullet(Ordinary_Enemy, ptrtoscene, 360 - ShootAngle);
+	}
+	angle += 10;
+	if (angle >= 36)
+		angle -= 36;
 }
 
 

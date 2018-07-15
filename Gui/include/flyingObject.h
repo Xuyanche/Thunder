@@ -39,14 +39,4 @@ public:
 
 
 
-class BulletManage {
-	
-	QList<> bulletList
-
-
-
-
-};
-
-
 
