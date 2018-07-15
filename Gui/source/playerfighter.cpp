@@ -68,6 +68,12 @@ void PlayerFighter::destroy()
 }
 
 
+void PlayerFighter::Attack()
+{
+	BulletManager::createBullet(Ordinary_Friend, ptrtoscene, (-45 / 3.14159));
+}
+
+
 void PlayerFighter::MoveLeft()
 {
 	QPointF pos = scenePos();
@@ -103,4 +109,81 @@ void PlayerFighter::MoveDown()
 		pos.ry += PLAYER_ORDINARY_SPEED;
 		setPos(pos);
 	}
+}
+
+
+void PlayerFighter::keyPressEvent(QKeyEvent * Event)
+{
+	switch (Event->key())
+	{
+	case Qt::Key_Up:
+	case Qt::Key_W:
+		Event->accept();
+		W = true;
+		break;
+	case Qt::Key_A:
+	case Qt::Key_Left:
+		Event->accept();
+		A = true;
+		break;
+	case Qt::Key_S:
+	case Qt::Key_Down:
+		Event->accept();
+		S = true;
+		break;
+	case Qt::Key_D:
+	case Qt::Key_Right:
+		Event->accept();
+		D = true;
+		break;
+	default:
+		Event->ignore();
+		break;
+	}
+
+}
+
+void PlayerFighter::keyReleaseEvent(QKeyEvent * Event)
+{
+	switch (Event->key())
+	{
+	case Qt::Key_Up:
+	case Qt::Key_W:
+		Event->accept();
+		W = false;
+		break;
+	case Qt::Key_A:
+	case Qt::Key_Left:
+		Event->accept();
+		A = false;
+		break;
+	case Qt::Key_S:
+	case Qt::Key_Down:
+		Event->accept();
+		S = false;
+		break;
+	case Qt::Key_D:
+	case Qt::Key_Right:
+		Event->accept();
+		D = false;
+		break;
+	default:
+		Event->ignore();
+		break;
+	}
+
+}
+
+void PlayerFighter::advance(int)
+{
+	Attack();
+	if (W)
+		MoveUp();
+	if (S)
+		MoveDown();
+	if (A)
+		MoveLeft();
+	if (D)
+		MoveRight();
+	hitCtrl();
 }

@@ -11,8 +11,6 @@ public:
 	~PlayerFighter();
 
 
-	void KeyPressEvent(QKeyEvent *event);
-
 
 	flyingObjectType getType();
 
@@ -21,7 +19,7 @@ public:
 	QPainterPath shape() const;
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
-	
+	void Attack();
 	void hitCtrl();
 	void damaged(Bullet* t);
 	void destroy();
@@ -32,6 +30,12 @@ public:
 	void MoveUp();
 	void MoveDown();
 
+	void keyPressEvent(QKeyEvent* Event);
+	void keyReleaseEvent(QKeyEvent* Event);
+	void advance(int);
+	
+
 private:
 	int health;
+	bool W, A, S, D;
 };
