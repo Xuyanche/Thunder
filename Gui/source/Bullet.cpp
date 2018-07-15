@@ -38,7 +38,7 @@ void Bullet::advance() {
 	setPos(pos);
 	if (checkPos() == false) {
 		setVisible(false);
-		
+		deleteLater();
 	}
 	return;
 }
@@ -64,8 +64,8 @@ void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 
 
 
-void BulletManager::createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue) {
-	Bullet* newbullet;
+Bullet* BulletManager::createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue) {
+	Bullet* newbullet = NULL;
 
 	QPixmaps tmp;
 
@@ -82,10 +82,6 @@ void BulletManager::createBullet(BulletType typevalue, QGraphicsScene *scene, qr
 		break;
 	}
 
-	if (newbullet != NULL) {
-		bulletList.append(newbullet);
-	}
-
-	return;
+	return newbullet;
 }
 

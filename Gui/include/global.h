@@ -27,3 +27,8 @@
 const QString Enemybullet_Ordinary_Image = ":/image/enemyBullet_ordinary.png";
 const QString Friendbullet_Ordinary_Image = ":/image/friendBullet_ordinary.png";
 
+
+
+
+
+
