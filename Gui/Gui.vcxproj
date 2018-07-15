@@ -116,6 +116,10 @@
     <ClCompile Include="game1.cpp" />
     <ClCompile Include="list.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="source\Boss.cpp" />
+    <ClCompile Include="source\Bullet.cpp" />
+    <ClCompile Include="source\FlyingObject.cpp" />
+    <ClCompile Include="source\playerfighter.cpp" />
     <ClCompile Include="start.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +150,16 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\boss.h" />
+    <ClInclude Include="include\BulletManager.h" />
+    <QtMoc Include="include\flyingObject.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtWidgets</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_UITOOLS_LIB;QT_WIDGETS_LIB</Define>
+    </QtMoc>
+    <ClInclude Include="include\global.h" />
+    <ClInclude Include="include\playerfighter.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="resource2.h" />

@@ -42,6 +42,18 @@
     <ClCompile Include="list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\Boss.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\FlyingObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\playerfighter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="start.h">
@@ -51,6 +63,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="list.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="include\flyingObject.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -78,6 +93,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\boss.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BulletManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\playerfighter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
