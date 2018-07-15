@@ -7,7 +7,7 @@ class PlayerFighter :public FlyingObject
 {
 public:
 
-	PlayerFighter(qreal wvalue, qreal hvalue, qreal spead, QPixmap &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue);
+	PlayerFighter(qreal wvalue, qreal hvalue, qreal spead, QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue);
 	~PlayerFighter();
 
 

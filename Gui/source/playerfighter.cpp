@@ -1,7 +1,7 @@
 #include "..\include\playerfighter.h"
 
-PlayerFighter::PlayerFighter(qreal wvalue, qreal hvalue, qreal spead, QPixmap & pic, QGraphicsScene * scene, QGraphicsItem * parent, int healthvalue)
-	:FlyingObject(wvalue, hvalue, spead, pic, scene, parent)
+PlayerFighter::PlayerFighter(qreal wvalue, qreal hvalue, qreal speed, QPixmaps & pic, QGraphicsScene * scene, QGraphicsItem * parent, int healthvalue)
+	:FlyingObject(wvalue, hvalue, speed, pic, scene, parent)
 {
 	health = healthvalue;
 }
@@ -18,7 +18,7 @@ void PlayerFighter::hitCtrl()
 	{
 		if (i->type() == Bullet::Type) {
 			Bullet* t = (Bullet*)i;
-			if (t->belong != Self)	
+			if (t->belong != Friend)	
 				damaged(t);
 		}
 	}
@@ -26,7 +26,7 @@ void PlayerFighter::hitCtrl()
 
 void PlayerFighter::damaged(Bullet* t)
 {
-	health -= (t->damange);
+	health -= (t->damage);
 	t->destroyed();
 	if (health <= 0) {
 		destroyed();
@@ -35,5 +35,5 @@ void PlayerFighter::damaged(Bullet* t)
 
 void PlayerFighter::destroyed()
 {
-	delete this;
+	deleteLater();
 }

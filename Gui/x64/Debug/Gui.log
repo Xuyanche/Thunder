@@ -1,4 +1,7 @@
-﻿  Bullet.cpp
-  FlyingObject.cpp
-Bullet.obj : error LNK2019: 无法解析的外部符号 "public: virtual __cdecl FlyingObject::~FlyingObject(void)" (??1FlyingObject@@UEAA@XZ)，该符号在函数 "public: virtual __cdecl Bullet::~Bullet(void)" (??1Bullet@@UEAA@XZ) 中被引用
-D:\徐延成\Documents\GitHub\Thunder\x64\Debug\\Gui.exe : fatal error LNK1120: 1 个无法解析的外部命令
+﻿  playerfighter.cpp
+d:\徐延成\documents\github\thunder\gui\source\playerfighter.cpp(4): error C2664: “FlyingObject::FlyingObject(const FlyingObject &)”: 无法将参数 4 从“QPixmap”转换为“const QPixmaps &”
+  d:\徐延成\documents\github\thunder\gui\source\playerfighter.cpp(5): note: 原因如下: 无法从“QPixmap”转换为“const QPixmaps”
+  d:\徐延成\documents\github\thunder\gui\source\playerfighter.cpp(5): note: 没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+d:\徐延成\documents\github\thunder\gui\source\playerfighter.cpp(21): error C2065: “Self”: 未声明的标识符
+d:\徐延成\documents\github\thunder\gui\source\playerfighter.cpp(29): error C2039: “damange”: 不是“Bullet”的成员
+  d:\徐延成\documents\github\thunder\gui\include\bulletmanager.h(16): note: 参见“Bullet”的声明
