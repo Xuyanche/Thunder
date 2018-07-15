@@ -1,5 +1,5 @@
 #pragma once
-
+#include <ctime>
 #include "include/flyingObject.h"
 #include "include/BulletManager.h"
 
@@ -15,6 +15,7 @@ public:
 	void destroy();
 
 	void Attack();
+	void BattleMode();
 
 private:
 	int health;

@@ -57,3 +57,11 @@ void Boss::Attack()
 }
 
 
+void Boss::BattleMode()
+{
+	while (health > 0) {
+		Attack();
+		_sleep(500);
+	}
+
+}
