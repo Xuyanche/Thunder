@@ -11,6 +11,35 @@ PlayerFighter::~PlayerFighter()
 }
 
 
+flyingObjectType PlayerFighter::getType() {
+	return flyingObjectType::Type_Player;
+}
+
+//继承自QgraphicsObject的纯虚函数
+QRectF PlayerFighter::boundingRect() const {
+	return pixmaps.at(0).rect();
+}
+
+QPainterPath PlayerFighter::shape() const {
+	QPainterPath path;
+	path.addRect(boundingRect());
+	return path;
+}
+
+void PlayerFighter::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
+	Q_UNUSED(option);
+	Q_UNUSED(widget);
+	painter->drawPixmap(0, 0, pixmaps.at(0));
+	//自身带有painter
+	return;
+}
+
+
+
+
+
+
+
 
 void PlayerFighter::hitCtrl()
 {
@@ -33,7 +62,7 @@ void PlayerFighter::damaged(Bullet* t)
 	}
 }
 
-void PlayerFighter::destroyed()
+void PlayerFighter::destroy()
 {
 	deleteLater();
 }

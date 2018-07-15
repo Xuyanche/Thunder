@@ -35,13 +35,13 @@ void Boss::damaged(Bullet* t)
 	health -= (t->damage);
 	t->destroy();
 	if (health <= 0) {
-		destroyed();
+		destroy();
 	}
 }
 
 void Boss::destroy()
 {
-	delete this;
+	deleteLater();
 }
 
 void Boss::Attack()

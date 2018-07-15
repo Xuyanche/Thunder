@@ -12,10 +12,20 @@ public:
 
 
 	void KeyPressEvent(QKeyEvent *event);
+
+
+	flyingObjectType getType();
+
+	//¼Ì³Ð×ÔQgraphicsObjectµÄ´¿Ðéº¯Êý
+	QRectF boundingRect() const;
+	QPainterPath shape() const;
+	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+
 	
 	void hitCtrl();
 	void damaged(Bullet* t);
-	void destroyed();
+	void destroy();
+
 
 private:
 	int health;
