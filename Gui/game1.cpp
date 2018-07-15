@@ -5,14 +5,19 @@
 game1::game1(QWidget *parent)
 	: QMainWindow(parent)
 {   
-	ui = new Ui::MainWindow();
+	ui = new Ui::game1();
 	ui->setupUi(this);
 	backbutton = new QPushButton(this);
 	backbutton->setText("back");
 	backbutton->setGeometry(520, 400, 50, 25);
 	connect(backbutton, SIGNAL(clicked(bool)), this, SLOT(on_backbutton_clicked_game1()));
-	sence = new QGraphicsScene(0, 0, 250.400);
+	sence = new QGraphicsScene(10, 0, 260, 400);
+	ui->view->setScene(sence);
 	
+	ui->progressBar->setOrientation(Qt::Horizontal);  // 水平方向
+	ui->progressBar->setMinimum(0);  // 最小值
+	ui->progressBar->setMaximum(0);  // 最大值
+	ui->progressBar->setStyleSheet("QProgressBar{border:1px solid #FFFFFF;"  "height:30;" "background:red;""text-align:center;""color:rgb(255,255,0);" "border-radius:10px;}" "QProgressBar::chunk{ ""background:qlineargradient(spread : pad,x1 : 0,y1 : 0,x2 : 1,y2 : 0,stop : 0 red,stop : 1 blue);" "border-radius:10px; }" );
 }
 
 game1::~game1()

@@ -1,11 +1,10 @@
 #pragma once
-#pragma execution_character_set("utf-8")
 
 #include <QMainwindow>
 #include"QPushButton"
 #include"qgraphicsscene.h"
-#include"qgraphicswidget.h"
-namespace Ui { class MainWindow; };
+#include"qgraphicsview.h"
+namespace Ui { class game1; };
 class game1 : public QMainWindow
 {
 	Q_OBJECT
@@ -20,8 +19,7 @@ slots:
 signals: 
 	void showstart_fromgame1();
 private:
-	Ui::MainWindow *ui;
+	Ui::game1*ui;
 	QPushButton*backbutton;
-	QGraphicsScene*scene;
-	QGraphicsView*view;
+	QGraphicsScene* sence;
 };
