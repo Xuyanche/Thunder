@@ -1,6 +1,6 @@
 #include "game1.h"
 #include"ui_game1.h"
-
+#include "include\playerfighter.h"
 
 game1::game1(QWidget *parent)
 	: QMainWindow(parent)

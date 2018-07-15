@@ -68,9 +68,9 @@ void PlayerFighter::destroy()
 }
 
 
-void PlayerFighter::Attack()
+void PlayerFighter::Attack(QGraphicsScene *ptrsence)
 {
-	BulletManager::createBullet(Ordinary_Friend, ptrtoscene, (-45 / 3.14159));
+	BulletManager::createBullet(Ordinary_Friend, ptrsence, (-45 / 3.14159));
 }
 
 
@@ -78,7 +78,7 @@ void PlayerFighter::MoveLeft()
 {
 	QPointF pos = scenePos();
 	if (checkPos(-PLAYER_ORDINARY_SPEED, 0)) {
-		pos.rx -= PLAYER_ORDINARY_SPEED;
+		pos.rx ()-= PLAYER_ORDINARY_SPEED;
 		setPos(pos);
 	}
 }
@@ -88,7 +88,7 @@ void PlayerFighter::MoveRight()
 {
 	QPointF pos = scenePos();
 	if (checkPos(PLAYER_ORDINARY_SPEED, 0)) {
-		pos.rx += PLAYER_ORDINARY_SPEED;
+		pos.rx ()+= PLAYER_ORDINARY_SPEED;
 		setPos(pos);
 	}
 }
@@ -97,7 +97,7 @@ void PlayerFighter::MoveUp()
 {
 	QPointF pos = scenePos();
 	if (checkPos(0, -PLAYER_ORDINARY_SPEED)) {
-		pos.ry -= PLAYER_ORDINARY_SPEED;
+		pos.ry() -= PLAYER_ORDINARY_SPEED;
 		setPos(pos);
 	}
 }
@@ -106,7 +106,7 @@ void PlayerFighter::MoveDown()
 {
 	QPointF pos = scenePos();
 	if (checkPos(0, PLAYER_ORDINARY_SPEED)) {
-		pos.ry += PLAYER_ORDINARY_SPEED;
+		pos.ry ()+= PLAYER_ORDINARY_SPEED;
 		setPos(pos);
 	}
 }
@@ -176,7 +176,6 @@ void PlayerFighter::keyReleaseEvent(QKeyEvent * Event)
 
 void PlayerFighter::advance(int)
 {
-	Attack();
 	if (W)
 		MoveUp();
 	if (S)

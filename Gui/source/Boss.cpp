@@ -44,12 +44,12 @@ void Boss::destroy()
 	deleteLater();
 }
 
-void Boss::Attack()
+void Boss::Attack(QGraphicsScene *ptrsence)
 {
 	int ShootAngle;
-	
+	 
 	for (ShootAngle = angle; ShootAngle <= 180; ShootAngle += 36) {
-		BulletManager::createBullet(Ordinary_Enemy, ptrtoscene, (360 - ShootAngle)/3.14159);
+		BulletManager::createBullet(Ordinary_Enemy, ptrsence, (360 - ShootAngle)/3.14159);
 	}
 	angle += 10;
 	if (angle >= 36)
@@ -60,7 +60,6 @@ void Boss::Attack()
 void Boss::BattleMode()
 {
 	while (health > 0) {
-		Attack();
 		_sleep(500);
 	}
 

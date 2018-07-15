@@ -14,7 +14,7 @@ public:
 	void damaged(Bullet* t);
 	void destroy();
 
-	void Attack();
+	void Attack(QGraphicsScene *ptrsence);
 	void BattleMode();
 
 private:

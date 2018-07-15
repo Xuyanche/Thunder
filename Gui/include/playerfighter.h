@@ -19,7 +19,7 @@ public:
 	QPainterPath shape() const;
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
-	void Attack();
+	void Attack(QGraphicsScene *ptrsence);
 	void hitCtrl();
 	void damaged(Bullet* t);
 	void destroy();
