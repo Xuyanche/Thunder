@@ -2,3 +2,7 @@
 *.obj
 *.tlog
 x64/
+Gui/Gui.vcxproj
+Gui/Gui.vcxproj.filters
+.vs/Gui/v15/Browse.VC.db
+.vs/Gui/v15/.suo
