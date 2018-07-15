@@ -2,3 +2,4 @@
 *.obj
 *.tlog
 x64/
+.vs/Gui/v15/
