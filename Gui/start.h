@@ -1,23 +1,30 @@
 #pragma once
-#pragma execution_character_set("utf-8")
 
-#include <QtWidgets/QDialog>
-#include "ui_start.h"
+#include <QDialog>
 #include"QPushButton"
-#include "Qlabel"
-#include"Qstring"
+#include "qlabel.h"
+#include"qstring.h"
 #include"QFont"
+namespace Ui {
+class startClass;
+}
 
-class start : public QDialog
+class Dialog : public QDialog
 {
 	Q_OBJECT
 
 public:
-	start(QWidget *parent = Q_NULLPTR);
-
+	explicit Dialog(QWidget *parent = 0);
+	~Dialog();
+	private
+slots:
+	void receive();
+	void on_listbutton_clicked();
+	void on_startbutton_clicked();
+signals:
+	void showlist();
+signals:
+	void showgame1();
 private:
-	Ui::startClass ui;
-	QLabel *tital = new QLabel(this);
-	QPushButton*startbutton = new QPushButton(this);
-	QPushButton*quitbutton = new QPushButton(this);
+	Ui::startClass *ui;
 };

@@ -36,9 +36,21 @@
     <ClCompile Include="start.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="list.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="start.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="game1.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="list.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -46,10 +58,30 @@
     <QtUic Include="start.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="game1.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="list.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="start.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="image\tital.png" />
   </ItemGroup>
 </Project>
