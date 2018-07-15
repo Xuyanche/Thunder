@@ -36,6 +36,10 @@ void Bullet::advance() {
 	pos.rx() += xspeed;
 	pos.ry() += yspeed;
 	setPos(pos);
+	if (checkPos() == false) {
+		setVisible(false);
+		
+	}
 	return;
 }
 

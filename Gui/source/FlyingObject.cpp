@@ -18,8 +18,8 @@ FlyingObject::FlyingObject(qreal wvalue, qreal hvalue, qreal speed, const QPixma
 bool FlyingObject::checkPos() {
 	bool poslegal = false;
 	QPointF pos = scenePos();
-	if (pos.rx() > -1 * width && pos.rx() < SCENEHEIGHT&& pos.ry() > -1 * height && pos.ry < SCENEHEIGHT) {
-
+	if (pos.rx() > -1 * width && pos.rx() < SCENEHEIGHT&& pos.ry() > -1 * height && pos.ry() < SCENEHEIGHT) {
+		poslegal = true;
 	}
-
+	return poslegal;
 }

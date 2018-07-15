@@ -1,4 +1,4 @@
 ﻿  Bullet.cpp
-  LINK : 没有找到 D:\徐延成\Documents\GitHub\Thunder\x64\Debug\\Gui.exe 或上一个增量链接没有生成它；正在执行完全链接
+  FlyingObject.cpp
 Bullet.obj : error LNK2019: 无法解析的外部符号 "public: virtual __cdecl FlyingObject::~FlyingObject(void)" (??1FlyingObject@@UEAA@XZ)，该符号在函数 "public: virtual __cdecl Bullet::~Bullet(void)" (??1Bullet@@UEAA@XZ) 中被引用
 D:\徐延成\Documents\GitHub\Thunder\x64\Debug\\Gui.exe : fatal error LNK1120: 1 个无法解析的外部命令
