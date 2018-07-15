@@ -27,7 +27,7 @@ public:
 	virtual flyingObjectType getType() = 0;
 	
 	bool checkPos();
-
+	bool checkPos(int dx, int dy);
 
 	//x, y, z value is included in the qgraphicobject class
 	qreal width;

@@ -66,3 +66,41 @@ void PlayerFighter::destroy()
 {
 	deleteLater();
 }
+
+
+void PlayerFighter::MoveLeft()
+{
+	QPointF pos = scenePos();
+	if (checkPos(-PLAYER_ORDINARY_SPEED, 0)) {
+		pos.rx -= PLAYER_ORDINARY_SPEED;
+		setPos(pos);
+	}
+}
+
+
+void PlayerFighter::MoveRight()
+{
+	QPointF pos = scenePos();
+	if (checkPos(PLAYER_ORDINARY_SPEED, 0)) {
+		pos.rx += PLAYER_ORDINARY_SPEED;
+		setPos(pos);
+	}
+}
+
+void PlayerFighter::MoveUp()
+{
+	QPointF pos = scenePos();
+	if (checkPos(0, -PLAYER_ORDINARY_SPEED)) {
+		pos.ry -= PLAYER_ORDINARY_SPEED;
+		setPos(pos);
+	}
+}
+
+void PlayerFighter::MoveDown()
+{
+	QPointF pos = scenePos();
+	if (checkPos(0, PLAYER_ORDINARY_SPEED)) {
+		pos.ry += PLAYER_ORDINARY_SPEED;
+		setPos(pos);
+	}
+}

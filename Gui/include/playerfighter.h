@@ -7,7 +7,7 @@ class PlayerFighter :public FlyingObject
 {
 public:
 
-	PlayerFighter(qreal wvalue, qreal hvalue, qreal spead, QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue);
+	PlayerFighter(qreal wvalue, qreal hvalue, qreal speed, QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue);
 	~PlayerFighter();
 
 
@@ -26,6 +26,11 @@ public:
 	void damaged(Bullet* t);
 	void destroy();
 
+	//移动函数，请每个时钟周期检查一次键盘，并调用一次此函数
+	void MoveLeft();
+	void MoveRight();
+	void MoveUp();
+	void MoveDown();
 
 private:
 	int health;

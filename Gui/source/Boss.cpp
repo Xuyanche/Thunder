@@ -30,10 +30,10 @@ void Boss::hitCtrl()
 	}
 }
 
-void Boss::damaged(Bullet* t)
+void Boss::damaged(Bullet *t)
 {
 	health -= (t->damage);
-	t->destroy();
+	t->Bullet::destroy();
 	if (health <= 0) {
 		destroy();
 	}
@@ -47,9 +47,9 @@ void Boss::destroy()
 void Boss::Attack()
 {
 	int ShootAngle;
-	BulletManager BM;
+	
 	for (ShootAngle = angle; ShootAngle <= 180; ShootAngle += 36) {
-		BM.createBullet(Ordinary_Enemy, ptrtoscene, 360 - ShootAngle);
+		BulletManager::createBullet(Ordinary_Enemy, ptrtoscene, 360 - ShootAngle);
 	}
 	angle += 10;
 	if (angle >= 36)
