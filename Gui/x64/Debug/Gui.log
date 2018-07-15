@@ -1,14 +1,4 @@
-﻿  Moc'ing start.h...
-  Moc'ing include\flyingObject.h...
-  Rcc'ing start.qrc...
-  Uic'ing start.ui...
-  RCC: Warning: No resources in 'D:\寰愬欢鎴怽Documents\GitHub\Thunder\Gui\start.qrc'.
-  main.cpp
-  Bullet.cpp
+﻿  Bullet.cpp
   FlyingObject.cpp
-  start.cpp
-d:\徐延成\documents\github\thunder\gui\source\bullet.cpp(36): error C2659: “+=”: 作为左操作数 (编译源文件 source\Bullet.cpp)
-d:\徐延成\documents\github\thunder\gui\source\bullet.cpp(37): error C2659: “+=”: 作为左操作数 (编译源文件 source\Bullet.cpp)
-  moc_start.cpp
-  moc_flyingObject.cpp
-  qrc_start.cpp
+Bullet.obj : error LNK2019: 无法解析的外部符号 "public: virtual __cdecl FlyingObject::~FlyingObject(void)" (??1FlyingObject@@UEAA@XZ)，该符号在函数 "public: virtual __cdecl Bullet::~Bullet(void)" (??1Bullet@@UEAA@XZ) 中被引用
+D:\徐延成\Documents\GitHub\Thunder\x64\Debug\\Gui.exe : fatal error LNK1120: 1 个无法解析的外部命令

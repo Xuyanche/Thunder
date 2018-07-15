@@ -7,17 +7,17 @@ class Boss :public FlyingObject
 {
 public:
 	Boss();
-	Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent ,int healthvalue);
+	Boss(qreal wvalue, qreal hvalue, qreal spead, QPixmap &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue);
 	~Boss();
 
 	void hitCtrl();
 	void damaged(Bullet* t);
-	void destroy();
+	void destroyed();
 
-	void Attack();
+	void battlemode();
 
 private:
 	int health;
-	int angle = 0;
+
 
 };

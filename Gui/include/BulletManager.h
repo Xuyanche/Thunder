@@ -40,10 +40,9 @@ public:
 
 class BulletManager {
 public:
-	void createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue);
-	
+	static Bullet* createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue);
 
-	QList<Bullet*> bulletList;
+
 };
 
 
