@@ -57,13 +57,14 @@ void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
 	painter->drawPixmap(0, 0, pixmaps.at(0));
+	//自身带有painter
 	return;
 }
 
 
 
 
-Bullet* BulletManager::createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue) {
+Bullet* ObjectManager::createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue) {
 	Bullet* newbullet = NULL;
 
 	QPixmaps tmp;
@@ -84,3 +85,13 @@ Bullet* BulletManager::createBullet(BulletType typevalue, QGraphicsScene *scene,
 	return newbullet;
 }
 
+
+PlayerFighter * ObjectManager::createFighter(QGraphicsScene *scene, qint32 healthvalue)
+{
+	PlayerFighter* newfighter = NULL;
+	QPixmaps tmp;
+
+	tmp.append(QPixmap(PlayerFighter_Ordinary_Image));
+	newfighter = new PlayerFighter(FIGHTER_ORDINARY_WIDTH, FIGHTER_ORDINARY_HEIGHT, PLAYER_ORDINARY_SPEED, tmp, scene, 0, healthvalue);
+	return newfighter;
+}
