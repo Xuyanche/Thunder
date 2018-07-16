@@ -1,5 +1,6 @@
 #pragma once
-#include "../include/BulletManager.h"
+#include "flyingObject.h"
+#include "BulletManager.h"
 #include <QKeyEvent>
 
 class PlayerFighter :public FlyingObject
@@ -23,7 +24,8 @@ public:
 	void damaged(Bullet* t);
 	void destroy();
 
-	//移动函数
+
+	//移动函数，请每个时钟周期检查一次键盘，并调用一次此函数
 	void MoveLeft();
 	void MoveRight();
 	void MoveUp();
@@ -38,6 +40,3 @@ private:
 	int health;
 	bool W, A, S, D;
 };
-
-
-

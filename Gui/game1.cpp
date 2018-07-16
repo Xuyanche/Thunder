@@ -1,6 +1,8 @@
 #include "game1.h"
 #include"ui_game1.h"
-#include "include\playerfighter.h"
+#include "include/playerfighter.h"
+#include "include/boss.h"
+#include "include/BulletManager.h"
 
 game1::game1(QWidget *parent)
 	: QMainWindow(parent)
@@ -13,7 +15,6 @@ game1::game1(QWidget *parent)
 	connect(backbutton, SIGNAL(clicked(bool)), this, SLOT(on_backbutton_clicked_game1()));
 	sence = new QGraphicsScene(10, 0, 260, 400);
 	ui->view->setScene(sence);
-	
 	ui->progressBar->setStyleSheet("QProgressBar{border:1px solid #FFFFFF;"  "height:30;" "background:red;""text-align:center;""color:rgb(255,255,0);" "border-radius:10px;}" "QProgressBar::chunk{ ""background:qlineargradient(spread : pad,x1 : 0,y1 : 0,x2 : 1,y2 : 0,stop : 0 red,stop : 1 blue);" "border-radius:10px; }" );
 
 }

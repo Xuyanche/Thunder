@@ -2,7 +2,6 @@
 #include <vector>
 #include <iostream>
 #include "../include/flyingObject.h"
-#include "../include/playerfighter.h" 
 using namespace std;
 
 
@@ -39,10 +38,10 @@ public:
 
 
 
-class ObjectManager {
+class BulletManager {
 public:
 	static Bullet* createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue);
-	static PlayerFighter* createFighter(QGraphicsScene *scene, qint32 healthvalue);
+
 
 };
 

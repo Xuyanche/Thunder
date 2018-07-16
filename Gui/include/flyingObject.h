@@ -4,7 +4,7 @@
 #include <qgraphicsscene.h>
 #include <qpainter.h>
 #include "..\include\global.h"
-#include "game1.h"
+#include"game1.h"
 
 //qreal Ô¼µÈÓÚ double
 

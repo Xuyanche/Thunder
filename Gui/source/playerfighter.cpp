@@ -4,7 +4,6 @@ PlayerFighter::PlayerFighter(qreal wvalue, qreal hvalue, qreal speed, QPixmaps &
 	:FlyingObject(wvalue, hvalue, speed, pic, scene, parent)
 {
 	health = healthvalue;
-	W = A = S = D = false;
 }
 
 PlayerFighter::~PlayerFighter()
@@ -71,7 +70,7 @@ void PlayerFighter::destroy()
 
 void PlayerFighter::Attack(QGraphicsScene *ptrsence)
 {
-	ObjectManager::createBullet(Ordinary_Friend, ptrsence, (-45 / 3.14159));
+	BulletManager::createBullet(Ordinary_Friend, ptrsence, (-45 / 3.14159));
 }
 
 
@@ -187,3 +186,9 @@ void PlayerFighter::advance(int)
 		MoveRight();
 	hitCtrl();
 }
+
+
+
+
+
+

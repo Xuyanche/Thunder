@@ -49,7 +49,7 @@ void Boss::Attack(QGraphicsScene *ptrsence)
 	int ShootAngle;
 	 
 	for (ShootAngle = angle; ShootAngle <= 180; ShootAngle += 36) {
-		ObjectManager::createBullet(Ordinary_Enemy, ptrsence, (360 - ShootAngle)/3.14159);
+		BulletManager::createBullet(Ordinary_Enemy, ptrsence, (360 - ShootAngle)/3.14159);
 	}
 	angle += 10;
 	if (angle >= 36)
@@ -63,4 +63,24 @@ void Boss::BattleMode()
 		_sleep(500);
 	}
 
+}
+
+
+
+
+QRectF Boss::boundingRect() const {
+	return pixmaps.at(0).rect();
+}
+
+QPainterPath Boss::shape() const {
+	QPainterPath path;
+	path.addRect(boundingRect());
+	return path;
+}
+
+void Boss::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
+	Q_UNUSED(option);
+	Q_UNUSED(widget);
+	painter->drawPixmap(0, 0, pixmaps.at(0));
+	return;
 }

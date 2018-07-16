@@ -21,15 +21,13 @@
 #define FRIENDBULLET_ORDINARY_DAMAGE 3
 
 #define PLAYER_ORDINARY_SPEED 10
-#define FIGHTER_ORDINARY_WIDTH 100
-#define FIGHTER_ORDINARY_HEIGHT 100
 
 
 
 const QString Enemybullet_Ordinary_Image = ":/image/enemyBullet_ordinary.png";
 const QString Friendbullet_Ordinary_Image = ":/image/friendBullet_ordinary.png";
 
-const QString PlayerFighter_Ordinary_Image = "../image/playerfighter.png";
+
 
 
 
