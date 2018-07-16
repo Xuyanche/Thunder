@@ -1,6 +1,5 @@
 #pragma once
-#include "flyingObject.h"
-#include "BulletManager.h"
+#include "../include/BulletManager.h"
 #include <QKeyEvent>
 
 class PlayerFighter :public FlyingObject
@@ -39,3 +38,6 @@ private:
 	int health;
 	bool W, A, S, D;
 };
+
+
+
