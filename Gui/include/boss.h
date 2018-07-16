@@ -14,6 +14,10 @@ public:
 	void damaged(Bullet* t);
 	void destroy();
 
+	QRectF boundingRect() const;
+	QPainterPath shape() const;
+	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+
 	void Attack(QGraphicsScene *ptrsence);
 	void BattleMode();
 
