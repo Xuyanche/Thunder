@@ -4,6 +4,7 @@ PlayerFighter::PlayerFighter(qreal wvalue, qreal hvalue, qreal speed, QPixmaps &
 	:FlyingObject(wvalue, hvalue, speed, pic, scene, parent)
 {
 	health = healthvalue;
+	W = A = S = D = false;
 }
 
 PlayerFighter::~PlayerFighter()

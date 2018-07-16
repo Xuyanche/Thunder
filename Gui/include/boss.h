@@ -6,7 +6,7 @@
 class Boss :public FlyingObject
 {
 public:
-	Boss();
+
 	Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent ,int healthvalue);
 	~Boss();
 
