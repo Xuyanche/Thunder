@@ -4,7 +4,7 @@
 #include <qgraphicsscene.h>
 #include <qpainter.h>
 #include "..\include\global.h"
-#include"game1.h"
+#include "game1.h"
 
 //qreal Ô¼µÈÓÚ double
 
@@ -20,7 +20,7 @@ class FlyingObject : public QGraphicsObject {
 
 public:
 	FlyingObject(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent);
-	virtual ~FlyingObject() = 0;
+	~FlyingObject();
 
 	virtual void hitCtrl() = 0;
 	virtual void destroy() = 0;

@@ -35,3 +35,8 @@ bool FlyingObject::checkPos(int dx, int dy)
 	}
 	return poslegal;
 }
+
+FlyingObject::~FlyingObject()
+{
+
+}

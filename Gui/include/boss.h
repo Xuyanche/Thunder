@@ -1,7 +1,7 @@
 #pragma once
 #include <ctime>
-#include "include/flyingObject.h"
-#include "include/BulletManager.h"
+#include "flyingObject.h"
+#include "BulletManager.h"
 
 class Boss :public FlyingObject
 {
