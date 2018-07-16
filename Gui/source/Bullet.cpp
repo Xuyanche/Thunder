@@ -21,7 +21,6 @@ Bullet::Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QG
 	if (belongvalue == Enemy) {
 		parent = 0;
 	}
-	painter->drawPixmap(0, 0, pixs.at(0));
 }
 
 
@@ -42,7 +41,7 @@ flyingObjectType Bullet::getType(){
 
 void Bullet::destroy() {
 	setVisible(false);
-	deleteLater();
+	//deleteLater();
 }
 
 void Bullet::advance() {
@@ -71,8 +70,7 @@ void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
 	painter->drawPixmap(0, 0, pixmaps.at(0));
-	//自身带有painter
-	return;
+	//painter->drawLine(-10, -10, 10, 10);
 }
 
 

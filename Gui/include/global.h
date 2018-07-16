@@ -26,10 +26,10 @@
 
 
 
-const QString Enemybullet_Ordinary_Image = ":/image/enemyBullet_ordinary.png";
-const QString Friendbullet_Ordinary_Image = ":/image/friendBullet_ordinary.png";
+const QString Enemybullet_Ordinary_Image = "D:/–Ï—”≥…/Documents/GitHub/Thunder/Gui/image/friendBullet_ordinary.png";
+const QString Friendbullet_Ordinary_Image = "D:/–Ï—”≥…/Documents/GitHub/Thunder/Gui/image/friendBullet_ordinary.png";
 
-const QString PlayerFighter_Ordinary_Image = "../image/playerfighter.png";
+const QString PlayerFighter_Ordinary_Image = "D:/–Ï—”≥…/Documents/GitHub/Thunder/Gui/image/friendBullet_ordinary.png";
 
 
 

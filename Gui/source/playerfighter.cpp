@@ -30,7 +30,6 @@ void PlayerFighter::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
 	painter->drawPixmap(0, 0, pixmaps.at(0));
-	//自身带有painter
 	return;
 }
 

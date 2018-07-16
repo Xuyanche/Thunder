@@ -3,6 +3,7 @@
 #include "include/playerfighter.h"
 #include "include/boss.h"
 #include "include/BulletManager.h"
+#include <qgraphicsitem.h>
 
 game1::game1(QWidget *parent)
 	: QMainWindow(parent)
@@ -19,7 +20,7 @@ game1::game1(QWidget *parent)
 
 	Bullet* b = ObjectManager::createBullet(Ordinary_Enemy, sence, 0);
 	b->setPos(100, 100);
-	
+
 }
 
 game1::~game1()
