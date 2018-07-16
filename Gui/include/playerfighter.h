@@ -24,9 +24,6 @@ public:
 	void damaged(Bullet* t);
 	void destroy();
 
-	QRectF boundingRect() const;
-	QPainterPath shape() const;
-	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 	//移动函数，请每个时钟周期检查一次键盘，并调用一次此函数
 	void MoveLeft();

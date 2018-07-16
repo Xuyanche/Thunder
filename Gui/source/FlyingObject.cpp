@@ -15,6 +15,12 @@ FlyingObject::FlyingObject(qreal wvalue, qreal hvalue, qreal speed, const QPixma
 	
 }
 
+
+
+FlyingObject::~FlyingObject() {
+
+}
+
 bool FlyingObject::checkPos() {
 	bool poslegal = false;
 	QPointF pos = scenePos();

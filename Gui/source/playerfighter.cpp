@@ -189,24 +189,6 @@ void PlayerFighter::advance(int)
 
 
 
-QRectF PlayerFighter::boundingRect() const {
-	return pixmaps.at(0).rect();
-}
-
-QPainterPath PlayerFighter::shape() const {
-	QPainterPath path;
-	path.addRect(boundingRect());
-	return path;
-}
-
-void PlayerFighter::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
-	Q_UNUSED(option);
-	Q_UNUSED(widget);
-	painter->drawPixmap(0, 0, pixmaps.at(0));
-	return;
-}
-
-
 
 
 
