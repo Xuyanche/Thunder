@@ -70,7 +70,7 @@ void PlayerFighter::destroy()
 
 void PlayerFighter::Attack(QGraphicsScene *ptrsence)
 {
-	BulletManager::createBullet(Ordinary_Friend, ptrsence, (-45 / 3.14159));
+	ObjectManager::createBullet(Ordinary_Friend, ptrsence, (-45 / 3.14159));
 }
 
 
