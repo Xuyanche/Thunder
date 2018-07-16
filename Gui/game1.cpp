@@ -17,6 +17,9 @@ game1::game1(QWidget *parent)
 	ui->view->setScene(sence);
 	ui->progressBar->setStyleSheet("QProgressBar{border:1px solid #FFFFFF;"  "height:30;" "background:red;""text-align:center;""color:rgb(255,255,0);" "border-radius:10px;}" "QProgressBar::chunk{ ""background:qlineargradient(spread : pad,x1 : 0,y1 : 0,x2 : 1,y2 : 0,stop : 0 red,stop : 1 blue);" "border-radius:10px; }" );
 
+	Bullet* b = ObjectManager::createBullet(Ordinary_Enemy, sence, 0);
+	b->setPos(100, 100);
+	
 }
 
 game1::~game1()

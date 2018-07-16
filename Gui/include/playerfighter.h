@@ -21,9 +21,8 @@ public:
 
 	void Attack(QGraphicsScene *ptrsence);
 	void hitCtrl();
-	void damaged(Bullet* t);
+	
 	void destroy();
-
 
 	//移动函数，请每个时钟周期检查一次键盘，并调用一次此函数
 	void MoveLeft();

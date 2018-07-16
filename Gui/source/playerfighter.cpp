@@ -45,22 +45,24 @@ void PlayerFighter::hitCtrl()
 {
 	for each (QGraphicsItem *i in collidingItems())
 	{
-		if (i->type() == Bullet::Type) {
-			Bullet* t = (Bullet*)i;
-			if (t->belong != Friend)	
-				damaged(t);
+		if (i->type() == FlyingObject::Type) {
+			FlyingObject* t = static_cast<FlyingObject*>(i);
+			if (t->getType() == Type_Bullet) {
+				Bullet* b = static_cast<Bullet*>(t);
+				if (b->belong == Enemy) {
+					health = health - b->damage;
+					b->destroy();
+					if (health <= 0) {
+						destroy();
+					}
+				}
+			}
 		}
 	}
+	return;
 }
 
-void PlayerFighter::damaged(Bullet* t)
-{
-	health -= (t->damage);
-	t->destroyed();
-	if (health <= 0) {
-		destroyed();
-	}
-}
+
 
 void PlayerFighter::destroy()
 {

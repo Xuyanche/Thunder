@@ -12,6 +12,20 @@ Bullet::Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QG
 	}
 }
 
+
+
+Bullet::Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QGraphicsScene *scene, QGraphicsItem* parent, qreal angle, int damagevalue, BelongTo belongvalue, QPainter* painter)
+	: FlyingObject(wvalue, hvalue, speed, pixs, scene, parent), damage(damagevalue), belong(belongvalue) {
+	xspeed = maxspeed * sin(angle);
+	yspeed = maxspeed * cos(angle);
+	if (belongvalue == Enemy) {
+		parent = 0;
+	}
+	painter->drawPixmap(0, 0, pixs.at(0));
+}
+
+
+
 Bullet::~Bullet() {
 	//do nothing
 }
@@ -85,7 +99,7 @@ Bullet* ObjectManager::createBullet(BulletType typevalue, QGraphicsScene *scene,
 	return newbullet;
 }
 
-
+/*
 PlayerFighter * ObjectManager::createFighter(QGraphicsScene *scene, qint32 healthvalue)
 {
 	PlayerFighter* newfighter = NULL;
@@ -94,4 +108,4 @@ PlayerFighter * ObjectManager::createFighter(QGraphicsScene *scene, qint32 healt
 	tmp.append(QPixmap(PlayerFighter_Ordinary_Image));
 	newfighter = new PlayerFighter(FIGHTER_ORDINARY_WIDTH, FIGHTER_ORDINARY_HEIGHT, PLAYER_ORDINARY_SPEED, tmp, scene, 0, healthvalue);
 	return newfighter;
-}
+}*/

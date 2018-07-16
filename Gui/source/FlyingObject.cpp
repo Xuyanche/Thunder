@@ -13,7 +13,9 @@ FlyingObject::FlyingObject(qreal wvalue, qreal hvalue, qreal speed, const QPixma
 	
 	scene->addItem(this);
 	
+
 }
+
 
 
 
