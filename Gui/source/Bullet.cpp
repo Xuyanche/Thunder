@@ -41,7 +41,7 @@ flyingObjectType Bullet::getType(){
 
 void Bullet::destroy() {
 	setVisible(false);
-	//deleteLater();
+	deleteLater();
 }
 
 void Bullet::advance(int) {
@@ -52,7 +52,7 @@ void Bullet::advance(int) {
 		setPos(pos);
 	}
 	else {
-		deleteLater();
+		destroy();
 	}
 	return;
 }
