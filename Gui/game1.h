@@ -12,6 +12,7 @@ class game1 : public QMainWindow
 public:
 	game1(QWidget *parent = Q_NULLPTR);
 	~game1();
+	void timerEvent(QTimerEvent* Event);
 private 
 slots:
 	void receivestart_fromgame1();
@@ -19,6 +20,7 @@ slots:
 signals: 
 	void showstart_fromgame1();
 private:
+	int lamp;
 	Ui::game1*ui;
 	QPushButton*backbutton;
 	QGraphicsScene* sence;
