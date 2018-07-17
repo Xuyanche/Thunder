@@ -22,7 +22,7 @@ public:
 
 
 	void hitCtrl();
-	void advance();
+	void advance(int);
 	flyingObjectType getType();
 	void destroy();
 

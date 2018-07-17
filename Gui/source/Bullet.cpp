@@ -44,13 +44,14 @@ void Bullet::destroy() {
 	//deleteLater();
 }
 
-void Bullet::advance() {
+void Bullet::advance(int) {
 	QPointF pos = scenePos();
 	pos.rx() += xspeed;
 	pos.ry() += yspeed;
-	setPos(pos);
-	if (checkPos() == false) {
-		setVisible(false);
+	if (checkPos(xspeed, yspeed) == true) {
+		setPos(pos);
+	}
+	else {
 		deleteLater();
 	}
 	return;
@@ -69,8 +70,8 @@ QPainterPath Bullet::shape() const {
 void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
-	painter->drawPixmap(0, 0, pixmaps.at(0));
-	//painter->drawLine(-10, -10, 10, 10);
+	//painter->drawPixmap(0, 0, pixmaps.at(0));
+	painter->drawLine(-10, -10, 10, 10);
 }
 
 
