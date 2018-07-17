@@ -24,7 +24,7 @@
 #define FIGHTER_ORDINARY_WIDTH 100
 #define FIGHTER_ORDINARY_HEIGHT 100
 
-
+#define ACTION_FREQUENCY	50
 
 const QString Enemybullet_Ordinary_Image = "D:/–Ï—”≥…/Documents/GitHub/Thunder/Gui/image/friendBullet_ordinary.png";
 const QString Friendbullet_Ordinary_Image = "D:/–Ï—”≥…/Documents/GitHub/Thunder/Gui/image/friendBullet_ordinary.png";

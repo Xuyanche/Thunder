@@ -44,7 +44,7 @@ void Bullet::destroy() {
 	//deleteLater();
 }
 
-void Bullet::advance() {
+void Bullet::advance(int) {
 	QPointF pos = scenePos();
 	pos.rx() += xspeed;
 	pos.ry() += yspeed;

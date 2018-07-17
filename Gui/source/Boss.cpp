@@ -56,16 +56,14 @@ void Boss::Attack(QGraphicsScene *ptrsence)
 		angle -= 36;
 }
 
-
-void Boss::BattleMode()
-{
-	while (health > 0) {
-		_sleep(500);
-	}
-
+void Boss::advance(int) {
+	step++;
+	if (step%ACTION_FREQUENCY == 0)
+		Attack(scene());
+	if (step >= 100 * ACTION_FREQUENCY)
+		step = 0;
+	hitCtrl();
 }
-
-
 
 
 QRectF Boss::boundingRect() const {

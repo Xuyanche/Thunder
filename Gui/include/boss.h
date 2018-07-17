@@ -19,10 +19,10 @@ public:
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 	void Attack(QGraphicsScene *ptrsence);
-	void BattleMode();
+	void advance(int);
 
 private:
 	int health;
 	int angle = 0;
-
+	uint step = 0;
 };
