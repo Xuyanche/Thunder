@@ -48,9 +48,10 @@ void Bullet::advance(int) {
 	QPointF pos = scenePos();
 	pos.rx() += xspeed;
 	pos.ry() += yspeed;
-	setPos(pos);
-	if (checkPos() == false) {
-		setVisible(false);
+	if (checkPos(xspeed, yspeed) == true) {
+		setPos(pos);
+	}
+	else {
 		deleteLater();
 	}
 	return;
