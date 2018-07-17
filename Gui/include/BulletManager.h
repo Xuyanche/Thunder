@@ -22,7 +22,7 @@ public:
 
 
 	void hitCtrl();
-	void advance();
+	void advance(int);
 	flyingObjectType getType();
 	void destroy();
 
@@ -30,6 +30,7 @@ public:
 	QRectF boundingRect() const;
 	QPainterPath shape() const;
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+	
 
 	qreal xspeed;
 	qreal yspeed;

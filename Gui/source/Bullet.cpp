@@ -69,8 +69,8 @@ QPainterPath Bullet::shape() const {
 void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
-	painter->drawPixmap(0, 0, pixmaps.at(0));
-	//painter->drawLine(-10, -10, 10, 10);
+	//painter->drawPixmap(0, 0, pixmaps.at(0));
+	painter->drawLine(-10, -10, 10, 10);
 }
 
 
