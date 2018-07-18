@@ -4,6 +4,9 @@ PlayerFighter::PlayerFighter(qreal wvalue, qreal hvalue, qreal speed, QPixmaps &
 	:FlyingObject(wvalue, hvalue, speed, pic, scene, parent)
 {
 	health = healthvalue;
+	setFlag(ItemIsFocusable, true);
+	W = A = S = D = false;
+
 }
 
 PlayerFighter::~PlayerFighter()
@@ -29,7 +32,13 @@ QPainterPath PlayerFighter::shape() const {
 void PlayerFighter::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
-	painter->drawPixmap(0, 0, pixmaps.at(0));
+	//painter->drawPixmap(0, 0, pixmaps.at(0));
+	QPointF point[3] = {
+		QPointF(-0.5*width, 0.5*height),
+		QPointF(0, -0.5*height),
+		QPointF(0.5*width, 0.5*height)
+	};
+	painter->drawPolygon(point, 3);
 	return;
 }
 
@@ -78,7 +87,7 @@ void PlayerFighter::Attack(QGraphicsScene *ptrsence)
 void PlayerFighter::MoveLeft()
 {
 	QPointF pos = scenePos();
-	if (checkPos(-PLAYER_ORDINARY_SPEED, 0)) {
+	if (checkPos(-1 * PLAYER_ORDINARY_SPEED, 0)) {
 		pos.rx ()-= PLAYER_ORDINARY_SPEED;
 		setPos(pos);
 	}
@@ -97,7 +106,7 @@ void PlayerFighter::MoveRight()
 void PlayerFighter::MoveUp()
 {
 	QPointF pos = scenePos();
-	if (checkPos(0, -PLAYER_ORDINARY_SPEED)) {
+	if (checkPos(0, -1 * PLAYER_ORDINARY_SPEED)) {
 		pos.ry() -= PLAYER_ORDINARY_SPEED;
 		setPos(pos);
 	}
@@ -110,6 +119,7 @@ void PlayerFighter::MoveDown()
 		pos.ry ()+= PLAYER_ORDINARY_SPEED;
 		setPos(pos);
 	}
+	return;
 }
 
 

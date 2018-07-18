@@ -22,6 +22,9 @@ game1::game1(QWidget *parent)
 	Bullet* b1 = createBullet(Ordinary_Enemy, sence, 0);
 	b1->setPos(100, 100);	
 	Boss* boss = createBoss(sence);
+	PlayerFighter* fighter = createPlayerFighter(sence);
+	fighter->setPos(200, 200);
+	fighter->setFocus();
 	boss->setPos(100, 100);
 	lamp = startTimer(50);
 
