@@ -1,6 +1,6 @@
 #pragma once
 #include "flyingObject.h"
-#include "BulletManager.h"
+#include "bullet.h"
 #include <QKeyEvent>
 
 class PlayerFighter :public FlyingObject

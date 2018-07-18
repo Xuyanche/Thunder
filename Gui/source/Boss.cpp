@@ -7,6 +7,8 @@ Boss::Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphi
 	:FlyingObject(wvalue, hvalue, speed, pic, scene, parent)
 {
 	health = healthvalue;
+	angle = 0;
+	step = 0;
 }
 
 Boss::~Boss()
@@ -19,41 +21,47 @@ Boss::~Boss()
 
 void Boss::hitCtrl()
 {
+	FlyingObject *t;
 	for each (QGraphicsItem* i in collidingItems())
 	{
-		if (i->type() == Bullet::Type) {
-			Bullet *t = (Bullet*)i;
-			if (t->belong ==Friend ) {
-				damaged(t);
+		if (i->type() == FlyingObject::Type) {
+			t = static_cast<FlyingObject*>(i);
+			if (t->getType()==Type_Bullet) {
+				damaged(static_cast<Bullet*>(t));
 			}
 		}
 	}
+	return;
 }
 
 void Boss::damaged(Bullet *t)
 {
+	if (t->belong != Enemy)
+		return;
 	health -= (t->damage);
 	t->Bullet::destroy();
 	if (health <= 0) {
 		destroy();
 	}
+	return;
 }
 
 void Boss::destroy()
 {
+	setVisible(false);
 	deleteLater();
 }
 
 void Boss::Attack(QGraphicsScene *ptrsence)
 {
 	int ShootAngle;
-	 
 	for (ShootAngle = angle; ShootAngle <= 180; ShootAngle += 36) {
-		ObjectManager::createBullet(Ordinary_Enemy, ptrsence, (360 - ShootAngle)/3.14159);
+		createBullet(Ordinary_Enemy, ptrsence, (360 - ShootAngle)/3.14159);
 	}
 	angle += 10;
 	if (angle >= 36)
 		angle -= 36;
+	return;
 }
 
 void Boss::advance(int) {
@@ -63,6 +71,7 @@ void Boss::advance(int) {
 	if (step >= 100 * ACTION_FREQUENCY)
 		step = 0;
 	hitCtrl();
+	return;
 }
 
 
@@ -81,4 +90,17 @@ void Boss::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 	Q_UNUSED(widget);
 	painter->drawPixmap(0, 0, pixmaps.at(0));
 	return;
+}
+
+flyingObjectType Boss::getType() {
+	return Type_Boss;
+}
+
+Boss* createBoss(QGraphicsScene* scene) {
+	Boss* newBoss = NULL;
+	QPixmaps tmp;
+	tmp.append(QPixmap(Enemybullet_Ordinary_Image));
+	newBoss = new Boss(100, 100, 2, tmp, scene, 0, 1000);
+
+	return newBoss;
 }

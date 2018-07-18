@@ -1,18 +1,19 @@
 #pragma once
 #include <ctime>
-#include "include/flyingObject.h"
-#include "include/BulletManager.h"
+#include "flyingObject.h"
+#include "bullet.h"
+#include "global.h"
 
 class Boss :public FlyingObject
 {
 public:
-	Boss();
 	Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent ,int healthvalue);
 	~Boss();
 
 	void hitCtrl();
 	void damaged(Bullet* t);
 	void destroy();
+	flyingObjectType getType();
 
 	QRectF boundingRect() const;
 	QPainterPath shape() const;
@@ -21,8 +22,10 @@ public:
 	void Attack(QGraphicsScene *ptrsence);
 	void advance(int);
 
-private:
 	int health;
-	int angle = 0;
-	uint step = 0;
+	int angle;
+	uint step;
+
+	friend Boss* createBoss(QGraphicsScene *scene);
+
 };

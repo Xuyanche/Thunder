@@ -1,23 +1,12 @@
 #pragma once
-#include <vector>
-#include <iostream>
-#include "../include/flyingObject.h"
-#include "../include/playerfighter.h" 
+#include "flyingObject.h"
+#include "global.h"
+#include <math.h>
 using namespace std;
-
-
-enum BelongTo {
-	Enemy, Nutural, Friend
-};
-enum BulletType {
-	Ordinary_Friend, Ordinary_Enemy
-};
-
 
 class Bullet :public FlyingObject {
 public:
 	Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QGraphicsScene *scene, QGraphicsItem* parent, qreal angle, int damagevalue, BelongTo belongvalue);
-	Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QGraphicsScene *scene, QGraphicsItem* parent, qreal angle, int damagevalue, BelongTo belongvalue, QPainter* painter);
 	~Bullet();
 
 
@@ -37,15 +26,11 @@ public:
 	int damage;
 	BelongTo belong;
 
+
+	extern friend Bullet* createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue);
 };
 
 
-
-class ObjectManager {
-public:
-	static Bullet* createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue);
-
-};
 
 
 

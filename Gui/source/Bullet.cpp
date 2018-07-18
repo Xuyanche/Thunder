@@ -1,6 +1,5 @@
-#include "../include/BulletManager.h"
-#include "../include/global.h"
-#include <math.h>
+#include "../include/Bullet.h"
+
 
 
 Bullet::Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QGraphicsScene *scene, QGraphicsItem* parent, qreal angle, int damagevalue, BelongTo belongvalue)
@@ -13,15 +12,6 @@ Bullet::Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QG
 }
 
 
-
-Bullet::Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QGraphicsScene *scene, QGraphicsItem* parent, qreal angle, int damagevalue, BelongTo belongvalue, QPainter* painter)
-	: FlyingObject(wvalue, hvalue, speed, pixs, scene, parent), damage(damagevalue), belong(belongvalue) {
-	xspeed = maxspeed * sin(angle);
-	yspeed = maxspeed * cos(angle);
-	if (belongvalue == Enemy) {
-		parent = 0;
-	}
-}
 
 
 
@@ -70,14 +60,12 @@ QPainterPath Bullet::shape() const {
 void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
-	painter->drawPixmap(0, 0, pixmaps.at(pixpos));
-	//painter->drawLine(-10, -10, 10, 10);
+	//painter->drawPixmap(0, 0, pixmaps.at(pixpos));
+	painter->drawLine(-10, -10, 10, 10);
 }
 
 
-
-
-Bullet* ObjectManager::createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue) {
+Bullet* createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue) {
 	Bullet* newbullet = NULL;
 
 	QPixmaps tmp;
@@ -98,13 +86,4 @@ Bullet* ObjectManager::createBullet(BulletType typevalue, QGraphicsScene *scene,
 	return newbullet;
 }
 
-/*
-PlayerFighter * ObjectManager::createFighter(QGraphicsScene *scene, qint32 healthvalue)
-{
-	PlayerFighter* newfighter = NULL;
-	QPixmaps tmp;
 
-	tmp.append(QPixmap(PlayerFighter_Ordinary_Image));
-	newfighter = new PlayerFighter(FIGHTER_ORDINARY_WIDTH, FIGHTER_ORDINARY_HEIGHT, PLAYER_ORDINARY_SPEED, tmp, scene, 0, healthvalue);
-	return newfighter;
-}*/

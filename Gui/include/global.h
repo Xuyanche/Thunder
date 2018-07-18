@@ -34,3 +34,14 @@ const QString PlayerFighter_Ordinary_Image = ":/start/image/playerfighter.png";
 
 
 
+enum BelongTo {
+	Enemy, Nutural, Friend
+};
+enum BulletType {
+	Ordinary_Friend, Ordinary_Enemy
+};
+
+typedef QList<QPixmap> QPixmaps;
+enum flyingObjectType {
+	Type_Boss, Type_Bullet, Type_Player
+};

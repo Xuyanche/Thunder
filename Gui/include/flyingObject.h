@@ -3,15 +3,11 @@
 #include <qgraphicsitem.h>
 #include <qgraphicsscene.h>
 #include <qpainter.h>
-#include "..\include\global.h"
+#include "global.h"
 #include"game1.h"
 
 //qreal Ô¼µÈÓÚ double
 
-typedef QList<QPixmap> QPixmaps;
-enum flyingObjectType {
-	Type_Boss, Type_Bullet, Type_Player
-};
 
 
 class FlyingObject : public QGraphicsObject {
