@@ -6,6 +6,7 @@ PlayerFighter::PlayerFighter(qreal wvalue, qreal hvalue, qreal speed, QPixmaps &
 	health = healthvalue;
 	setFlag(ItemIsFocusable, true);
 	W = A = S = D = false;
+	step = 0;
 
 }
 
@@ -80,7 +81,8 @@ void PlayerFighter::destroy()
 
 void PlayerFighter::Attack(QGraphicsScene *ptrsence)
 {
-	createBullet(Ordinary_Friend, ptrsence, (-45 / 3.14159));
+	Bullet* t=createBullet(Ordinary_Friend, ptrsence, -0.5*CONSTANT_PI);
+	t->setPos(this->scenePos());
 }
 
 
@@ -196,6 +198,11 @@ void PlayerFighter::advance(int)
 	if (D)
 		MoveRight();
 	hitCtrl();
+	step++;
+	if (step%PLAYER_ATTACK_STEPS == 0)
+		Attack(this->scene());
+	if (step >= PLAYER_ATTACK_STEPS * 100)
+		step = 0;
 }
 
 

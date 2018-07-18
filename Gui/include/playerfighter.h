@@ -40,4 +40,5 @@ public:
 private:
 	int health;
 	bool W, A, S, D;
+	int step;
 };

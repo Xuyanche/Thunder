@@ -27,6 +27,9 @@
 
 #define ACTION_FREQUENCY	30
 
+#define CONSTANT_PI 3.1415926
+#define PLAYER_ATTACK_STEPS 20
+
 const QString Enemybullet_Ordinary_Image = ":/start/image/enemyBullet_ordinary.png";
 const QString Friendbullet_Ordinary_Image = ":/start/image/friendBullet_ordinary.png";
 
