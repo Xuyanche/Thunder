@@ -90,7 +90,8 @@ void Boss::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
 	//painter->drawPixmap(0, 0, pixmaps.at(0));
-	painter->drawLine(20, 20, 0, 0);
+	painter->setPen(QColor("red"));
+	painter->drawEllipse(-35, -35, 70, 70);
 	return;
 }
 

@@ -34,6 +34,8 @@ public:
 	void keyReleaseEvent(QKeyEvent* Event);
 	void advance(int);
 	
+	friend PlayerFighter* createPlayerFighter(QGraphicsScene* scene);
+
 
 private:
 	int health;
