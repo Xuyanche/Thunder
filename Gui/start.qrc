@@ -5,5 +5,10 @@
         <file>image/start (1).png</file>
         <file>image/list.png</file>
         <file>image/quit.png</file>
+        <file>image/background.png</file>
+        <file>image/boss.png</file>
+        <file>image/enemyBullet_ordinary.png</file>
+        <file>image/friendBullet_ordinary.png</file>
+        <file>image/playerfighter.png</file>
     </qresource>
 </RCC>

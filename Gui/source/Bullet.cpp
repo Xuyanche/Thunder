@@ -60,8 +60,8 @@ QPainterPath Bullet::shape() const {
 void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
-	//painter->drawPixmap(0, 0, pixmaps.at(pixpos));
-	painter->drawEllipse(-1 * width / 2, -1 * height / 2, width, height);
+	painter->drawPixmap(0, 0, pixmaps.at(pixpos));
+	//painter->drawEllipse(-1 * width / 2, -1 * height / 2, width, height);
 }
 
 

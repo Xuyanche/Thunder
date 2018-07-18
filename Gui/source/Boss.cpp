@@ -89,9 +89,9 @@ QPainterPath Boss::shape() const {
 void Boss::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
-	//painter->drawPixmap(0, 0, pixmaps.at(0));
-	painter->setPen(QColor("red"));
-	painter->drawEllipse(-35, -35, 70, 70);
+	painter->drawPixmap(-0.5*width, -0.5*height, pixmaps.at(0));
+	//painter->setPen(QColor("red"));
+	//painter->drawEllipse(-35, -35, 70, 70);
 	return;
 }
 
