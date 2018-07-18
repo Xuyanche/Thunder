@@ -26,10 +26,10 @@
 
 #define ACTION_FREQUENCY	50
 
-const QString Enemybullet_Ordinary_Image = "/Gui/image/friendBullet_ordinary.png";
-const QString Friendbullet_Ordinary_Image = "/Gui/image/friendBullet_ordinary.png";
+const QString Enemybullet_Ordinary_Image = ":/start/image/enemyBullet_ordinary.png";
+const QString Friendbullet_Ordinary_Image = ":/start/image/friendBullet_ordinary.png";
 
-const QString PlayerFighter_Ordinary_Image = "/Gui/image/playerfighter.png";
+const QString PlayerFighter_Ordinary_Image = ":/start/image/playerfighter.png";
 
 
 
