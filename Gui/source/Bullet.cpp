@@ -4,8 +4,8 @@
 
 Bullet::Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QGraphicsScene *scene, QGraphicsItem* parent, qreal angle, int damagevalue, BelongTo belongvalue)
 	: FlyingObject(wvalue, hvalue, speed, pixs, scene, parent), damage(damagevalue), belong(belongvalue) {
-	xspeed = maxspeed * sin(angle);
-	yspeed = maxspeed * cos(angle);
+	xspeed = maxspeed * cos(angle);
+	yspeed = maxspeed * sin(angle);
 	if (belongvalue == Enemy) {
 		parent = 0;
 	}
