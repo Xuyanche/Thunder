@@ -6,6 +6,7 @@
         <file>image/enemyBullet_ordinary.png</file>
         <file>image/friendBullet_ordinary.png</file>
         <file>image/playerfighter.png</file>
+<<<<<<< HEAD
         <file>image/quit.png</file>
         <file>image/start.png</file>
         <file>image/back.png</file>
@@ -15,5 +16,8 @@
         <file>image/startwid.png</file>
         <file>image/list.png</file>
         <file>image/next.png</file>
+=======
+        <file>image/enemyBullet_ordinary_boom.png</file>
+>>>>>>> d961269899bdfe86ee402f09bb521b751abc4e74
     </qresource>
 </RCC>

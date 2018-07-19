@@ -9,6 +9,7 @@ Boss::Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphi
 	health = healthvalue;
 	angle = 0;
 	step = 0;
+	setZValue(1);
 }
 
 Boss::~Boss()
@@ -24,10 +25,12 @@ void Boss::hitCtrl()
 	FlyingObject *t;
 	for each (QGraphicsItem* i in collidingItems())
 	{
-		if (i->type() == FlyingObject::Type) {
+		if (i->type() >= FlyingObject::Type) {
 			t = static_cast<FlyingObject*>(i);
 			if (t->getType()==Type_Bullet) {
-				damaged(static_cast<Bullet*>(t));
+				Bullet* b = static_cast<Bullet*>(t);
+				if (b->belong == Friend)
+					damaged(b);
 			}
 		}
 	}
@@ -36,13 +39,12 @@ void Boss::hitCtrl()
 
 void Boss::damaged(Bullet *t)
 {
-	if (t->belong != Enemy)
+	if (t->belong == Enemy || t->isHit != 0)
 		return;
 	health -= (t->damage);
-	t->Bullet::destroy();
-	if (health <= 0) {
+	t->boom();
+	if (health <= 0)
 		destroy();
-	}
 	return;
 }
 
@@ -58,7 +60,10 @@ void Boss::Attack(QGraphicsScene *ptrsence)
 	Bullet* b = NULL;
 	for (ShootAngle =angle; ShootAngle <= 180; ShootAngle += 36) {
 		b=createBullet(Ordinary_Enemy, ptrsence,  ShootAngle*3.1415926/180);
-		b->setPos(this->scenePos());
+		QPointF pos = scenePos();
+		pos.rx() = pos.rx() + width / 2 - b->width / 2;
+		pos.ry() = pos.ry() + height / 2 - b->height - 2;
+		b->setPos(pos);
 	}
 	angle += 5;
 	if (angle >= 36)
@@ -89,7 +94,7 @@ QPainterPath Boss::shape() const {
 void Boss::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
-	painter->drawPixmap(-0.5*width, -0.5*height, pixmaps.at(0));
+	painter->drawPixmap(0, 0, pixmaps.at(0));
 	//painter->setPen(QColor("red"));
 	//painter->drawEllipse(-35, -35, 70, 70);
 	return;
@@ -103,7 +108,7 @@ Boss* createBoss(QGraphicsScene* scene, gamenumber game) {
 	Boss* newBoss = NULL;
 	QPixmaps tmp;
 	tmp.append(QPixmap(Enemybullet_Ordinary_Image));
-	newBoss = new Boss(100, 100, 2, tmp, scene, 0, 1000);
+	newBoss = new Boss(BOSS_ORDINARY_WHIDTH,BOSS_ORDINARY_HEIGHT,2,tmp,scene,0,BOSS_ORDINARY_MAXHEALTH);
 
 	return newBoss;
 }

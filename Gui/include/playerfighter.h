@@ -23,7 +23,8 @@ public:
 	void hitCtrl();
 	
 	void destroy();
-
+	
+	int getHealth();
 	//移动函数，请每个时钟周期检查一次键盘，并调用一次此函数
 	void MoveLeft();
 	void MoveRight();
