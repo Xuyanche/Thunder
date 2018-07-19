@@ -24,10 +24,13 @@ void Boss::hitCtrl()
 	FlyingObject *t;
 	for each (QGraphicsItem* i in collidingItems())
 	{
-		if (i->type() == FlyingObject::Type) {
+		if (i->type() >= FlyingObject::Type) {
 			t = static_cast<FlyingObject*>(i);
 			if (t->getType()==Type_Bullet) {
-				damaged(static_cast<Bullet*>(t));
+				Bullet* b = static_cast<Bullet*>(t);
+				if (b->belong == Friend) {
+					damaged(b);
+				}
 			}
 		}
 	}
@@ -36,7 +39,7 @@ void Boss::hitCtrl()
 
 void Boss::damaged(Bullet *t)
 {
-	if (t->belong != Enemy)
+	if (t->belong == Enemy)
 		return;
 	health -= (t->damage);
 	t->Bullet::destroy();
@@ -103,7 +106,7 @@ Boss* createBoss(QGraphicsScene* scene) {
 	Boss* newBoss = NULL;
 	QPixmaps tmp;
 	tmp.append(QPixmap(Enemybullet_Ordinary_Image));
-	newBoss = new Boss(100, 100, 2, tmp, scene, 0, 1000);
+	newBoss = new Boss(BOSS_ORDINARY_WHIDTH,BOSS_ORDINARY_HEIGHT,2,tmp,scene,0,BOSS_ORDINARY_MAXHEALTH);
 
 	return newBoss;
 }

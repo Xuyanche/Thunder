@@ -33,13 +33,13 @@ QPainterPath PlayerFighter::shape() const {
 void PlayerFighter::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
-	//painter->drawPixmap(0, 0, pixmaps.at(0));
-	QPointF point[3] = {
+	painter->drawPixmap(0, 0, pixmaps.at(0));
+	/*QPointF point[3] = {
 		QPointF(-0.5*width, 0.5*height),
 		QPointF(0, -0.5*height),
 		QPointF(0.5*width, 0.5*height)
-	};
-	painter->drawPolygon(point, 3);
+	};*/
+	// painter->drawPolygon(point, 3);
 	return;
 }
 
@@ -54,7 +54,7 @@ void PlayerFighter::hitCtrl()
 {
 	for each (QGraphicsItem *i in collidingItems())
 	{
-		if (i->type() == FlyingObject::Type) {
+		if (i->type() >= FlyingObject::Type){
 			FlyingObject* t = static_cast<FlyingObject*>(i);
 			if (t->getType() == Type_Bullet) {
 				Bullet* b = static_cast<Bullet*>(t);
@@ -76,6 +76,11 @@ void PlayerFighter::hitCtrl()
 void PlayerFighter::destroy()
 {
 	deleteLater();
+}
+
+int PlayerFighter::getHealth()
+{
+	return health;
 }
 
 
