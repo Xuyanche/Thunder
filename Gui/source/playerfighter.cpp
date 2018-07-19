@@ -7,7 +7,7 @@ PlayerFighter::PlayerFighter(qreal wvalue, qreal hvalue, qreal speed, QPixmaps &
 	setFlag(ItemIsFocusable, true);
 	W = A = S = D = false;
 	step = 0;
-
+	setZValue(1);
 }
 
 PlayerFighter::~PlayerFighter()
@@ -33,13 +33,13 @@ QPainterPath PlayerFighter::shape() const {
 void PlayerFighter::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
 	Q_UNUSED(option);
 	Q_UNUSED(widget);
-	painter->drawPixmap(0, 0, pixmaps.at(0));
+	painter->drawPixmap(0, 0, pixmaps.at(pixpos));
 	/*QPointF point[3] = {
 		QPointF(-0.5*width, 0.5*height),
 		QPointF(0, -0.5*height),
 		QPointF(0.5*width, 0.5*height)
-	};*/
-	// painter->drawPolygon(point, 3);
+	};
+	painter->drawPolygon(point, 3);*/
 	return;
 }
 
@@ -58,14 +58,15 @@ void PlayerFighter::hitCtrl()
 			FlyingObject* t = static_cast<FlyingObject*>(i);
 			if (t->getType() == Type_Bullet) {
 				Bullet* b = static_cast<Bullet*>(t);
-				if (b->belong == Enemy) {
+				if (b->belong == Enemy && b->isHit == 0) {
 					health = health - b->damage;
-					b->destroy();
-					if (health <= 0) {
+					b->boom();
+					if (health <= 0)
 						destroy();
-					}
 				}
 			}
+			else if (t->getType() == Type_Boss)
+				destroy();
 		}
 	}
 	return;
@@ -86,8 +87,11 @@ int PlayerFighter::getHealth()
 
 void PlayerFighter::Attack(QGraphicsScene *ptrsence)
 {
-	Bullet* t=createBullet(Ordinary_Friend, ptrsence, -0.5*CONSTANT_PI);
-	t->setPos(this->scenePos());
+	Bullet* b = createBullet(Ordinary_Friend, ptrsence, -0.5*CONSTANT_PI);//子弹竖直向上
+	QPointF pos = scenePos();
+	pos.rx() = pos.rx() + width / 2 - b->width / 2;
+	pos.ry() = pos.ry() + height / 2 - b->height - 2;
+	b->setPos(pos);
 }
 
 

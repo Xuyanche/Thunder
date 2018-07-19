@@ -14,6 +14,7 @@ public:
 	void advance(int);
 	flyingObjectType getType();
 	void destroy();
+	void boom();
 
 	//¼Ì³Ð×ÔQgraphicsObjectµÄ´¿Ðéº¯Êý
 	QRectF boundingRect() const;
@@ -25,6 +26,8 @@ public:
 	qreal yspeed;
 	int damage;
 	BelongTo belong;
+
+	int isHit;
 
 
 	extern friend Bullet* createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue);

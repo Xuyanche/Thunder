@@ -18,15 +18,7 @@ game1::game1(QWidget *parent)
 	sence = new QGraphicsScene(10, 0, 260, 400);
 	ui->view->setScene(sence);
 	ui->progressBar->setStyleSheet("QProgressBar{border:1px solid #FFFFFF;"  "height:30;" "background:red;""text-align:center;""color:rgb(255,255,0);" "border-radius:10px;}" "QProgressBar::chunk{ ""background:qlineargradient(spread : pad,x1 : 0,y1 : 0,x2 : 1,y2 : 0,stop : 0 red,stop : 1 blue);" "border-radius:10px; }" );
-
-	Bullet* b1 = createBullet(Ordinary_Enemy, sence, 0);
-	b1->setPos(100, 100);	
-	Boss* boss = createBoss(sence);
-	PlayerFighter* fighter = createPlayerFighter(sence);
-	fighter->setPos(200, 200);
-	fighter->setFocus();
-	boss->setPos(100, 100);
-	lamp = startTimer(50);
+	isInit = false;
 
 }
 
@@ -38,15 +30,39 @@ void game1::on_backbutton_clicked_game1()
 {
 	this->hide();
 	emit showstart_fromgame1();
+	this->close();
 }
+
+void game1::init()
+{
+	if (isInit) {
+		return;
+	}
+	Boss* boss = createBoss(sence);
+	PlayerFighter* fighter = createPlayerFighter(sence);
+	fighter->setPos(100, 350);
+	fighter->setFocus();
+	boss->setPos(100, 50);
+	lamp = startTimer(50);
+	isInit = true;
+	return;
+}
+
 void game1::receivestart_fromgame1()
 {
 	this->show();
+	init();
 }
 
-void game1::timerEvent(QTimerEvent* Event) {
-
+void game1::timerEvent(QTimerEvent* Event)
+{
 	if(Event->timerId()==lamp)
 		sence->advance();
 	sence->update();
+}
+
+void game1::close()
+{
+	sence->clear();
+	isInit = false;
 }

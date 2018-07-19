@@ -10,5 +10,6 @@
         <file>image/enemyBullet_ordinary.png</file>
         <file>image/friendBullet_ordinary.png</file>
         <file>image/playerfighter.png</file>
+        <file>image/enemyBullet_ordinary_boom.png</file>
     </qresource>
 </RCC>
