@@ -22,10 +22,12 @@ public:
 	void Attack(QGraphicsScene *ptrsence);
 	void advance(int);
 
+	int gethealth();
+private:
 	int health;
 	int angle;
 	uint step;
 
-	friend Boss* createBoss(QGraphicsScene *scene);
+	friend Boss* createBoss(QGraphicsScene *scene, gamenumber game);
 
 };

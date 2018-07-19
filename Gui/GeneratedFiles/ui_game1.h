@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'game1.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.1
+** Created by: Qt User Interface Compiler version 5.11.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -39,7 +39,17 @@ public:
         progressBar = new QProgressBar(centralwidget);
         progressBar->setObjectName(QStringLiteral("progressBar"));
         progressBar->setGeometry(QRect(310, 10, 261, 21));
-        progressBar->setValue(24);
+        progressBar->setStyleSheet(QLatin1String("QProgressBar{\n"
+"        border: none;\n"
+"        color: white;\n"
+"        text-align: center;\n"
+"        background: none;\n"
+"}\n"
+"QProgressBar::chunk {\n"
+"        border: none;\n"
+"        background: rgb(255, 0, 0);\n"
+"}"));
+        progressBar->setValue(40);
         view = new QGraphicsView(centralwidget);
         view->setObjectName(QStringLiteral("view"));
         view->setGeometry(QRect(10, 0, 281, 411));

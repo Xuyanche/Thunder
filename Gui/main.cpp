@@ -10,10 +10,10 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 	Dialog w;
-	game1 g;
-	list l;
+	game1 g(gameone);
+	List l;
 	l.setWindowTitle(QString("成绩"));
-	list people;
+	List people;
 	people.setWindowTitle(QString("制作人员"));
 	w.show();
 	QObject::connect(&w, SIGNAL(showlist()), &l, SLOT(receivestart_fromlist()));

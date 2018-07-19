@@ -99,11 +99,15 @@ flyingObjectType Boss::getType() {
 	return Type_Boss;
 }
 
-Boss* createBoss(QGraphicsScene* scene) {
+Boss* createBoss(QGraphicsScene* scene, gamenumber game) {
 	Boss* newBoss = NULL;
 	QPixmaps tmp;
 	tmp.append(QPixmap(Enemybullet_Ordinary_Image));
 	newBoss = new Boss(100, 100, 2, tmp, scene, 0, 1000);
 
 	return newBoss;
+}
+int Boss::gethealth()
+{
+	return this->health;
 }

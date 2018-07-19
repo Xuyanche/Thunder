@@ -1,7 +1,7 @@
 #include "list.h"
 #include "ui_list.h"
 
-list::list(QWidget *parent)
+List::List(QWidget *parent)
 	: QDialog(parent)
 {
 	ui = new Ui::list();
@@ -12,16 +12,16 @@ list::list(QWidget *parent)
 	
 }
 
-list::~list()
+List::~List()
 {
 	delete ui;
 }
-void list::on_backbutton_clicked_list()
+void List::on_backbutton_clicked_list()
 {
 	this->hide();
 	emit showstart_fromlist();
 }
-void  list::receivestart_fromlist()
+void  List::receivestart_fromlist()
 {
 	this->show();
 }

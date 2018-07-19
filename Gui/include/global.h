@@ -49,3 +49,6 @@ typedef QList<QPixmap> QPixmaps;
 enum flyingObjectType {
 	Type_Boss, Type_Bullet, Type_Player
 };
+enum gamenumber{
+	gameone,gametwo,gamethree
+};

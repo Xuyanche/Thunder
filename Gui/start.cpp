@@ -17,24 +17,34 @@ Dialog::Dialog(QWidget *parent) :
 	*scaled_logo_img = logo_img->scaled(ui->tital->width(), ui->tital->height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
 	ui->tital->setPixmap(QPixmap::fromImage(*scaled_logo_img));
 
-	QPixmap start(":/start/image/start (1).png");
-	ui->startbutton->setIcon(start);
-	ui->startbutton->setIconSize(QSize(80, 25));
-	ui->startbutton->setStyleSheet("QPushButton{background:transparent;}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
+	//QPixmap start(":/start/image/start.png"); 
+	//ui->startbutton->setIcon(start);
+	//ui->startbutton->setIconSize(QSize(80, 35));
+	ui->startbutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/start.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
 
-	QPixmap list(":/start/image/list.png");
-	ui->listbutton->setIcon(list);
-	ui->listbutton->setIconSize(QSize(80, 25));
-	ui->listbutton->setStyleSheet("QPushButton{background:transparent;}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
+	//QPixmap list(":/start/image/list.png");
+	//ui->listbutton->setIcon(list);
+	//ui->listbutton->setIconSize(QSize(80, 35));
+	ui->listbutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/list.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
 
-	QPixmap quit(":/start/image/quit.png");
-	ui->quitbutton->setIcon(quit);
-	ui->quitbutton->setIconSize(QSize(25, 25));
-	ui->quitbutton->setStyleSheet("QPushButton{background:transparent;}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
+	//QPixmap quit(":/start/image/quit.png");
+	//ui->quitbutton->setIcon(quit);
+	//ui->quitbutton->setIconSize(QSize(25, 35));
+	ui->quitbutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/quit.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
 	
+	//QPixmap people(":/start/image/people.png");
+	//ui->peoplebutton->setIcon(people);
+	//ui->peoplebutton->setIconSize(QSize(80, 35));
+	ui->peoplebutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/people.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
 	
 	this->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
 	this->setFixedSize(this->width(), this->height());
+
+	QPixmap pixmap = QPixmap(":/start/image/startwid.png").scaled(this->size());
+	QPalette palette(this->palette());
+	palette.setBrush(QPalette::Background, QBrush(pixmap));
+	this->setPalette(palette);
+
 }
 Dialog::~Dialog()
 {

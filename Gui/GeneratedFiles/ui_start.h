@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'start.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.1
+** Created by: Qt User Interface Compiler version 5.11.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -33,19 +33,19 @@ public:
         startClass->resize(600, 400);
         startbutton = new QPushButton(startClass);
         startbutton->setObjectName(QStringLiteral("startbutton"));
-        startbutton->setGeometry(QRect(230, 160, 151, 41));
+        startbutton->setGeometry(QRect(230, 150, 151, 51));
         tital = new QLabel(startClass);
         tital->setObjectName(QStringLiteral("tital"));
-        tital->setGeometry(QRect(170, 70, 271, 71));
+        tital->setGeometry(QRect(170, 60, 271, 81));
         listbutton = new QPushButton(startClass);
         listbutton->setObjectName(QStringLiteral("listbutton"));
-        listbutton->setGeometry(QRect(230, 210, 151, 41));
+        listbutton->setGeometry(QRect(230, 200, 151, 51));
         peoplebutton = new QPushButton(startClass);
         peoplebutton->setObjectName(QStringLiteral("peoplebutton"));
-        peoplebutton->setGeometry(QRect(230, 260, 151, 41));
+        peoplebutton->setGeometry(QRect(230, 250, 151, 51));
         quitbutton = new QPushButton(startClass);
         quitbutton->setObjectName(QStringLiteral("quitbutton"));
-        quitbutton->setGeometry(QRect(550, 0, 51, 51));
+        quitbutton->setGeometry(QRect(560, 0, 41, 41));
 
         retranslateUi(startClass);
 
