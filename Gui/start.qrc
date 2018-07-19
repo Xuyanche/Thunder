@@ -1,23 +1,21 @@
 <RCC>
     <qresource prefix="/start">
-        <file>image/tital.png</file>
+        <file>image/back.png</file>
         <file>image/background.png</file>
         <file>image/boss.png</file>
         <file>image/enemyBullet_ordinary.png</file>
+        <file>image/enemyBullet_ordinary_boom.png</file>
         <file>image/friendBullet_ordinary.png</file>
-        <file>image/playerfighter.png</file>
-<<<<<<< HEAD
-        <file>image/quit.png</file>
-        <file>image/start.png</file>
-        <file>image/back.png</file>
         <file>image/game1.jpg</file>
         <file>image/game2.jpg</file>
-        <file>image/people.png</file>
-        <file>image/startwid.png</file>
         <file>image/list.png</file>
         <file>image/next.png</file>
-=======
-        <file>image/enemyBullet_ordinary_boom.png</file>
->>>>>>> d961269899bdfe86ee402f09bb521b751abc4e74
+        <file>image/people.png</file>
+        <file>image/playerfighter.png</file>
+        <file>image/quit.png</file>
+        <file>image/start.png</file>
+        <file>image/startwid.bmp</file>
+        <file>image/startwid.png</file>
+        <file>image/tital.png</file>
     </qresource>
 </RCC>

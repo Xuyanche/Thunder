@@ -24,18 +24,13 @@ slots:
 signals: 
 	void showstart_fromgame1();
 private:
-	void init();
 	void close();
 	int lamp;
 	bool isInit;
-
+	void init();
 	Ui::game1*ui;
 	QPushButton*backbutton;
 	QGraphicsScene* sence;
-<<<<<<< HEAD
-	
+	gamenumber game;
 
 };
-=======
-};
->>>>>>> d961269899bdfe86ee402f09bb521b751abc4e74
