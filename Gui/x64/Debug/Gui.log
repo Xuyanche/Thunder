@@ -1,5 +1,10 @@
-﻿  Moc'ing start.h...
-  moc_start.cpp
+﻿  Moc'ing include\flyingObject.h...
+  moc_flyingObject.cpp
+  moc_game1.cpp
+  game1.cpp
   main.cpp
-  start.cpp
-  Gui.vcxproj -> C:\Users\16287\Documents\Gui\x64\Debug\Gui.exe
+  Boss.cpp
+  Bullet.cpp
+  FlyingObject.cpp
+  playerfighter.cpp
+  Gui.vcxproj -> C:\Users\16287\source\repos\Gui\x64\Debug\Gui.exe
