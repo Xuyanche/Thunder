@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_game1_t {
-    QByteArrayData data[14];
-    char stringdata0[150];
+    QByteArrayData data[7];
+    char stringdata0[94];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,22 +36,14 @@ QT_MOC_LITERAL(1, 6, 19), // "showstart_fromgame1"
 QT_MOC_LITERAL(2, 26, 0), // ""
 QT_MOC_LITERAL(3, 27, 22), // "receivestart_fromgame1"
 QT_MOC_LITERAL(4, 50, 27), // "on_backbutton_clicked_game1"
-QT_MOC_LITERAL(5, 78, 10), // "choosegame"
-QT_MOC_LITERAL(6, 89, 10), // "gamenumber"
-QT_MOC_LITERAL(7, 100, 4), // "game"
-QT_MOC_LITERAL(8, 105, 5), // "Boss*"
-QT_MOC_LITERAL(9, 111, 4), // "boss"
-QT_MOC_LITERAL(10, 116, 7), // "Bullet*"
-QT_MOC_LITERAL(11, 124, 2), // "b1"
-QT_MOC_LITERAL(12, 127, 14), // "PlayerFighter*"
-QT_MOC_LITERAL(13, 142, 7) // "fighter"
+QT_MOC_LITERAL(5, 78, 8), // "OnNotify"
+QT_MOC_LITERAL(6, 87, 6) // "health"
 
     },
     "game1\0showstart_fromgame1\0\0"
     "receivestart_fromgame1\0"
-    "on_backbutton_clicked_game1\0choosegame\0"
-    "gamenumber\0game\0Boss*\0boss\0Bullet*\0"
-    "b1\0PlayerFighter*\0fighter"
+    "on_backbutton_clicked_game1\0OnNotify\0"
+    "health"
 };
 #undef QT_MOC_LITERAL
 
@@ -74,7 +66,7 @@ static const uint qt_meta_data_game1[] = {
  // slots: name, argc, parameters, tag, flags
        3,    0,   35,    2, 0x08 /* Private */,
        4,    0,   36,    2, 0x08 /* Private */,
-       5,    4,   37,    2, 0x08 /* Private */,
+       5,    1,   37,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -82,7 +74,7 @@ static const uint qt_meta_data_game1[] = {
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 6, 0x80000000 | 8, 0x80000000 | 10, 0x80000000 | 12,    7,    9,   11,   13,
+    QMetaType::Void, QMetaType::Int,    6,
 
        0        // eod
 };
@@ -96,7 +88,7 @@ void game1::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         case 0: _t->showstart_fromgame1(); break;
         case 1: _t->receivestart_fromgame1(); break;
         case 2: _t->on_backbutton_clicked_game1(); break;
-        case 3: _t->choosegame((*reinterpret_cast< gamenumber(*)>(_a[1])),(*reinterpret_cast< Boss*(*)>(_a[2])),(*reinterpret_cast< Bullet*(*)>(_a[3])),(*reinterpret_cast< PlayerFighter*(*)>(_a[4]))); break;
+        case 3: _t->OnNotify((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

@@ -108,11 +108,7 @@ Boss* createBoss(QGraphicsScene* scene, gamenumber game) {
 	Boss* newBoss = NULL;
 	QPixmaps tmp;
 	tmp.append(QPixmap(Enemybullet_Ordinary_Image));
-	newBoss = new Boss(BOSS_ORDINARY_WHIDTH,BOSS_ORDINARY_HEIGHT,2,tmp,scene,0,BOSS_ORDINARY_MAXHEALTH);
+	newBoss = new Boss(BOSS_ORDINARY_WHIDTH,BOSS_ORDINARY_HEIGHT,2,tmp,scene,0, PLAYER_ORDINARY_MAXHEALTH);
 
 	return newBoss;
-}
-int Boss::gethealth()
-{
-	return this->health;
 }

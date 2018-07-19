@@ -12,12 +12,13 @@
 class FlyingObject : public QGraphicsObject {
 	
 	Q_OBJECT
-
+signals:
+	void notify(int);
 public:
 	FlyingObject(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent);
 	~FlyingObject();
 
-	virtual void hitCtrl() = 0;
+    virtual void hitCtrl() = 0;
 	virtual void destroy() = 0;
 	virtual flyingObjectType getType() = 0;
 	

@@ -5,7 +5,8 @@
 #include "global.h"
 
 class Boss :public FlyingObject
-{
+{ 
+
 public:
 	Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent ,int healthvalue);
 	~Boss();
@@ -22,7 +23,6 @@ public:
 	void Attack(QGraphicsScene *ptrsence);
 	void advance(int);
 
-	int gethealth();
 private:
 	int health;
 	int angle;

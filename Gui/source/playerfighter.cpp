@@ -61,6 +61,7 @@ void PlayerFighter::hitCtrl()
 				if (b->belong == Enemy && b->isHit == 0) {
 					health = health - b->damage;
 					b->boom();
+					emit notify(health);
 					if (health <= 0)
 						destroy();
 				}
@@ -78,12 +79,6 @@ void PlayerFighter::destroy()
 {
 	deleteLater();
 }
-
-int PlayerFighter::getHealth()
-{
-	return health;
-}
-
 
 void PlayerFighter::Attack(QGraphicsScene *ptrsence)
 {
@@ -225,5 +220,4 @@ PlayerFighter* createPlayerFighter(QGraphicsScene* scene) {
 
 	return newfighter;
 }
-
 

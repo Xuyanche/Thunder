@@ -5,12 +5,13 @@
 
 class PlayerFighter :public FlyingObject
 {
+
+protected:
+	void hitCtrl();
 public:
 
 	PlayerFighter(qreal wvalue, qreal hvalue, qreal speed, QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue);
 	~PlayerFighter();
-
-
 
 	flyingObjectType getType();
 
@@ -20,11 +21,8 @@ public:
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 	void Attack(QGraphicsScene *ptrsence);
-	void hitCtrl();
 	
 	void destroy();
-	
-	int getHealth();
 	//移动函数，请每个时钟周期检查一次键盘，并调用一次此函数
 	void MoveLeft();
 	void MoveRight();
@@ -34,12 +32,12 @@ public:
 	void keyPressEvent(QKeyEvent* Event);
 	void keyReleaseEvent(QKeyEvent* Event);
 	void advance(int);
-	
-	friend PlayerFighter* createPlayerFighter(QGraphicsScene* scene);
 
+	friend PlayerFighter* createPlayerFighter(QGraphicsScene* scene);
 
 private:
 	int health;
 	bool W, A, S, D;
 	int step;
+
 };

@@ -20,9 +20,10 @@ private
 slots:
 	void receivestart_fromgame1();
 	void on_backbutton_clicked_game1();
-	void choosegame(gamenumber game, Boss* boss, Bullet* b1, PlayerFighter* fighter);
+	void OnNotify(int health);
 signals: 
 	void showstart_fromgame1();
+	
 private:
 	void close();
 	int lamp;
@@ -32,5 +33,4 @@ private:
 	QPushButton*backbutton;
 	QGraphicsScene* sence;
 	gamenumber game;
-
-};
+	};
