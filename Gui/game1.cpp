@@ -4,6 +4,7 @@
 #include <QTimer>
 #include <qgraphicsitem.h>
 
+game1::game1(gamenumber game,QWidget *parent)
 	: QMainWindow(parent)
 {   
 	ui = new Ui::game1();
