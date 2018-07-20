@@ -44,12 +44,6 @@ void PlayerFighter::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 }
 
 
-
-
-
-
-
-
 void PlayerFighter::hitCtrl()
 {
 	for each (QGraphicsItem *i in collidingItems())

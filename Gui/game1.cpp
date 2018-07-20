@@ -20,11 +20,6 @@ game1::game1(gamenumber game,QWidget *parent)
 	ui->progressBar->setTextVisible(false);
 	this->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
 	isInit = false;
-	isover = false;
-	if (isover=true)
-	{
-		this->close();
-	}
 }
 
 game1::~game1()
@@ -35,14 +30,13 @@ void game1::on_backbutton_clicked_game1()
 {   
 	this->hide();
 	emit show_fromgame1();
-	this->close();
 }
 
 void game1::on_nextbutton_clicked_game1()
 {  
-	//this->hide();
-	//emit show_next();
-	this->close();
+	this->hide();
+	emit show_next();
+	
 }
 void game1::init()
 {
@@ -53,6 +47,7 @@ void game1::init()
 	Boss* boss = createBoss(sence, game);
 	PlayerFighter* fighter = createPlayerFighter(sence);
 	QObject::connect(fighter, SIGNAL(sig_fall()), this, SLOT(slt_playerDead()));
+	QObject::connect(boss, SIGNAL(sig_fall()), this, SLOT(slt_bossDead()));
 	switch (game)
 	{
 	case gameone:
@@ -84,6 +79,7 @@ void game1::init()
 void game1::receive_fromgame1()
 {
 	this->show();
+	this->close();
 	init();
 	
 }
@@ -102,10 +98,14 @@ void game1::close()
 
 }
 void  game1::slt_playerDead()
-{   
+{
+	this->hide();
 	emit showgameover();
-	sence->clear();
-	isover = true;
+}
+void game1::slt_bossDead()
+{
+	this->hide();
+	emit show_next();
 }
 void game1::OnNotify(int health)
 {

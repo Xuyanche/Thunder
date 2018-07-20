@@ -23,6 +23,7 @@ slots:
 	void on_nextbutton_clicked_game1();
 	void OnNotify(int health);
 	void slt_playerDead();
+	void slt_bossDead();
 signals: 
 	void show_fromgame1();
 signals:
@@ -33,7 +34,6 @@ private:
 	void close();
 	int lamp;
 	bool isInit;
-	bool isover;
 	void init();
 	Ui::game1*ui;
 	QPushButton*backbutton;

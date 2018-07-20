@@ -52,6 +52,7 @@ void Boss::destroy()
 {
 	setVisible(false);
 	deleteLater();
+	emit sig_fall();
 }
 
 void Boss::Attack(QGraphicsScene *ptrsence)
