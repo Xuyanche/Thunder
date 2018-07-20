@@ -13,8 +13,12 @@ game1::game1(gamenumber game,QWidget *parent)
 	ui->setupUi(this);
 	ui->backbutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/back.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
 	ui->nextbutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/next.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
+	ui->resumebutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/resume.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
+	ui->stopbutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/stop.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
 	connect(ui->backbutton, SIGNAL(clicked(bool)), this, SLOT(on_backbutton_clicked_game1()));
 	connect(ui->nextbutton, SIGNAL(clicked(bool)), this, SLOT(on_nextbutton_clicked_game1()));
+	connect(ui->resumebutton, SIGNAL(clicked(bool)), this, SLOT(on_resumebutton_clicked_game1()));
+	connect(ui->stopbutton, SIGNAL(clicked(bool)), this, SLOT(on_stopbutton_clicked_game1()));
 	sence = new QGraphicsScene(10, 0, SCENEHEIGHT/2, SCENEWIDTH);
 	ui->view->setScene(sence);
 	ui->progressBar->setTextVisible(false);
@@ -69,7 +73,7 @@ void game1::init()
 		fighter->setPos(100, 350);
 		fighter->setFocus();
 		boss->setPos(100, 50);
-		lamp = startTimer(50);
+		lamp = startTimer(25);
 		this->setStyleSheet("QMainWindow {border-image: url(:/start/image/gw1.png);}");
 		ui->view->setStyleSheet("border-image: url(:/start/image/bg2.jpg)");
 
@@ -119,6 +123,7 @@ void game1::slt_bossDead()
 	if (islastgame)
 	{
 		emit show_congratulation();
+		islastgame = false;
 	}
 	else
 	{
@@ -130,4 +135,34 @@ void game1::slt_bossDead()
 void game1::OnNotify(int health)
 {
 	ui->progressBar->setValue(health);
+}
+
+void game1::on_resumebutton_clicked_game1()
+{
+	if (lamp == startTimer(50))
+	{
+		return;
+	}
+	switch (game)
+	{
+	case gameone:
+		lamp = startTimer(50);
+		break;
+	case gametwo:
+		lamp = startTimer(25);
+		break;
+	case gamethree:
+		break;
+	default:
+		break;
+	}
+}
+
+void game1::on_stopbutton_clicked_game1()
+{
+	if (lamp == 0)
+	{
+		return;
+	}
+	lamp = 0;
 }

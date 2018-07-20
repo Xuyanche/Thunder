@@ -65,9 +65,35 @@ QProgressBar::chunk {
    <widget class="QPushButton" name="nextbutton">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>360</x>
       <y>370</y>
-      <width>121</width>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="resumebutton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>330</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stopbutton">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>330</y>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>

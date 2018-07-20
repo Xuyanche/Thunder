@@ -34,9 +34,9 @@ public:
 	void advance(int);
 
 	friend PlayerFighter* createPlayerFighter(QGraphicsScene* scene);
-      
+    
 private:
-	int health;
+    int health;
 	bool W, A, S, D;
 	int step;
 

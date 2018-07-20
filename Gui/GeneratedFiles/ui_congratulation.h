@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'congratulation.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.1
+** Created by: Qt User Interface Compiler version 5.11.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -32,7 +32,9 @@ public:
         congratulation->resize(604, 300);
         label = new QLabel(congratulation);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(50, 30, 511, 91));
+        label->setGeometry(QRect(80, 20, 421, 151));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/start/image/victory.png")));
+        label->setScaledContents(true);
         quitbutton = new QPushButton(congratulation);
         quitbutton->setObjectName(QStringLiteral("quitbutton"));
         quitbutton->setGeometry(QRect(450, 210, 131, 51));
@@ -51,7 +53,7 @@ public:
     void retranslateUi(QDialog *congratulation)
     {
         congratulation->setWindowTitle(QApplication::translate("congratulation", "congratulation", nullptr));
-        label->setText(QApplication::translate("congratulation", "<html><head/><body><p><span style=\" font-size:28pt; font-weight:600; color:#550000;\">congratulations\357\274\201you win!</span></p></body></html>", nullptr));
+        label->setText(QString());
         quitbutton->setText(QString());
         backbutton->setText(QString());
         restartbutton->setText(QString());
