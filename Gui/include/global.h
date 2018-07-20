@@ -38,7 +38,7 @@
 
 const QString Enemybullet_Ordinary_Image = ":/start/image/enemyBullet_ordinary.png";
 const QString Enemybullet_Ordinary_Boom_Image = ":/start/image/enemyBullet_ordinary_boom.png";
-
+const QString Boss_Ordinary_Image = ":/start/image/boss.png";
 const QString Friendbullet_Ordinary_Image = ":/start/image/friendBullet_ordinary.png";
 
 const QString PlayerFighter_Ordinary_Image = ":/start/image/playerfighter.png";
