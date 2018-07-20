@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'list.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.1
+** Created by: Qt User Interface Compiler version 5.11.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -23,7 +23,7 @@ public:
     {
         if (list->objectName().isEmpty())
             list->setObjectName(QStringLiteral("list"));
-        list->resize(400, 315);
+        list->resize(411, 107);
 
         retranslateUi(list);
 

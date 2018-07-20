@@ -39,12 +39,8 @@ Dialog::Dialog(QWidget *parent) :
 	
 	this->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
 	this->setFixedSize(this->width(), this->height());
-
-	QPixmap pixmap = QPixmap(":/start/image/startwid.png").scaled(this->size());
-	QPalette palette(this->palette());
-	palette.setBrush(QPalette::Background, QBrush(pixmap));
-	this->setPalette(palette);
-
+	this->setStyleSheet("border-image: url(:/start/image/startwid.png);");
+	
 }
 Dialog::~Dialog()
 {

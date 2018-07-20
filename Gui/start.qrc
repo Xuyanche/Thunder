@@ -13,11 +13,18 @@
         <file>image/quit.png</file>
         <file>image/start.png</file>
         <file>image/tital.png</file>
-        <file>image/game1.png</file>
-        <file>image/game2.png</file>
-        <file>image/game3.png</file>
-        <file>image/game4.png</file>
         <file>image/startwid.png</file>
         <file>image/over.png</file>
+        <file>image/bg1.jpg</file>
+        <file>image/bg2.jpg</file>
+        <file>image/bg3.jpg</file>
+        <file>image/bg4.jpg</file>
+        <file>image/bg5.jpg</file>
+        <file>image/gameover.png</file>
+        <file>image/gw1.png</file>
+        <file>image/gw2.png</file>
+        <file>image/gw3.png</file>
+        <file>image/gw4.png</file>
+        <file>image/restart.png</file>
     </qresource>
 </RCC>

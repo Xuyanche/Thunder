@@ -27,11 +27,13 @@ signals:
 	void show_fromgame1();
 signals:
 	void show_next();
-	
+signals:
+	void showgameover();
 private:
 	void close();
 	int lamp;
 	bool isInit;
+	bool isover;
 	void init();
 	Ui::game1*ui;
 	QPushButton*backbutton;

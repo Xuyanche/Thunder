@@ -3,6 +3,7 @@
 #include "start.h"
 #include "game1.h"
 #include "list.h"
+#include "gameover.h"
 #include<qstring.h>
 #include <QApplication>
 
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
 	Dialog w;
 	game1 g1(gameone);
 	game1 g2(gametwo);
+	gameover o;
 	List l;
 	l.setWindowTitle(QString("³É¼¨"));
 	List people;
@@ -24,5 +26,10 @@ int main(int argc, char *argv[])
 	QObject::connect(&w, SIGNAL(showpeople()), &people, SLOT(receivestart_fromlist()));
 	QObject::connect(&g1, SIGNAL(show_next()), &g2, SLOT(receive_fromgame1()));
 	QObject::connect(&g2, SIGNAL(show_fromgame1()), &w, SLOT(receive()));
+	QObject::connect(&g1, SIGNAL(showgameover()), &o, SLOT(receive()));
+	QObject::connect(&g2, SIGNAL(showgameover()), &o, SLOT(receive()));
+	QObject::connect(&o, SIGNAL(show_start()), &w, SLOT(receive()));
+	QObject::connect(&o, SIGNAL(show_gameone()), &g1, SLOT(receive_fromgame1()));
+	return a.exec();
 	return a.exec();
 }

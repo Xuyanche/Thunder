@@ -15,12 +15,16 @@ game1::game1(gamenumber game,QWidget *parent)
 	ui->nextbutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/next.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
 	connect(ui->backbutton, SIGNAL(clicked(bool)), this, SLOT(on_backbutton_clicked_game1()));
 	connect(ui->nextbutton, SIGNAL(clicked(bool)), this, SLOT(on_nextbutton_clicked_game1()));
-	sence = new QGraphicsScene(10, 0, 260, 400);
+	sence = new QGraphicsScene(10, 0, SCENEHEIGHT/2, SCENEWIDTH);
 	ui->view->setScene(sence);
 	ui->progressBar->setTextVisible(false);
 	this->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
 	isInit = false;
-	
+	isover = false;
+	if (isover=true)
+	{
+		this->close();
+	}
 }
 
 game1::~game1()
@@ -36,8 +40,8 @@ void game1::on_backbutton_clicked_game1()
 
 void game1::on_nextbutton_clicked_game1()
 {  
-	this->hide();
-	emit show_next();
+	//this->hide();
+	//emit show_next();
 	this->close();
 }
 void game1::init()
@@ -56,26 +60,24 @@ void game1::init()
 		fighter->setFocus();
 		boss->setPos(100, 50);
 		lamp = startTimer(50);
-		sencemap.scaled(this->size());
-		sencemap.load(":/start/image/game1.png");
+		this->setStyleSheet("QMainWindow {border-image: url(:/start/image/gw1.png);}");
+		ui->view->setStyleSheet( "border-image: url(:/start/image/bg1.jpg)");
 		
 		ui->progressBar->setRange(0, PLAYER_ORDINARY_MAXHEALTH);
 		ui->progressBar->setValue(PLAYER_ORDINARY_MAXHEALTH);
 		QObject::connect(fighter, SIGNAL(notify(int)), this, SLOT(OnNotify(int)));
 		isInit = true;
+		
 		break;
 	case gametwo:
-		sencemap.load(":/start/image/game2.png");
-		sencemap.scaled(this->size());
+		this->setStyleSheet("QMainWindow {border-image: url(:/start/image/gw1.png);}");
+		ui->view->setStyleSheet("border-image: url(:/start/image/bg2.jpg)");
 		break;
 	case gamethree:
 		break;
 	default:
 		break;
 	}
-	QPalette palette(this->palette());
-	palette.setBrush(QPalette::Background, QBrush(sencemap));
-	this->setPalette(palette);
 	return;
 }
 
@@ -100,12 +102,10 @@ void game1::close()
 
 }
 void  game1::slt_playerDead()
-{
-	//sence->clear();
-	QLabel *label = new QLabel();
-	QPixmap gameover(":/start/image/over.png");
-	label->setPixmap(gameover);
-	label->show();
+{   
+	emit showgameover();
+	sence->clear();
+	isover = true;
 }
 void game1::OnNotify(int health)
 {
