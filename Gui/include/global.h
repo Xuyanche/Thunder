@@ -36,8 +36,6 @@
 #define CONSTANT_PI 3.1415926
 #define PLAYER_ATTACK_STEPS 20
 
-#define MUSIC1 ":/start/music/01. ÓÀÒ¹³­¡¡¡« Eastern Night.mp3"
-
 const QString Enemybullet_Ordinary_Image = ":/start/image/enemyBullet_ordinary.png";
 const QString Enemybullet_Ordinary_Boom_Image = ":/start/image/enemyBullet_ordinary_boom.png";
 const QString Boss_Ordinary_Image = ":/start/image/boss.png";

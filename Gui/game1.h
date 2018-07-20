@@ -44,6 +44,5 @@ private:
 	Ui::game1*ui;
 	QPushButton*backbutton;
 	QGraphicsScene* sence;
-	QSound *sound;
 	gamenumber game;
 	};

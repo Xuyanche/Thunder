@@ -55,6 +55,8 @@ void game1::init()
 	PlayerFighter* fighter = createPlayerFighter(sence);
 	QObject::connect(fighter, SIGNAL(sig_fall()), this, SLOT(slt_playerDead()));
 	QObject::connect(boss, SIGNAL(sig_fall()), this, SLOT(slt_bossDead()));
+	QSound *sound = new QSound(":/start/music/01.wav", this);
+	sound->play();
 	switch (game)
 	{
 	case gameone:
