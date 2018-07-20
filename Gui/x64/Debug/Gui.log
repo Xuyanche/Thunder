@@ -1,11 +1,5 @@
-﻿  Rcc'ing start.qrc...
-  moc_flyingObject.cpp
-  moc_game1.cpp
-  qrc_start.cpp
+﻿  moc_game1.cpp
   game1.cpp
   main.cpp
   Boss.cpp
-  Bullet.cpp
-  FlyingObject.cpp
-  playerfighter.cpp
   Gui.vcxproj -> C:\Users\Lenovo\Documents\project\Thunder\x64\Debug\Gui.exe

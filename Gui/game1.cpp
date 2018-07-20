@@ -65,8 +65,17 @@ void game1::init()
 		
 		break;
 	case gametwo:
+		fighter->setPos(100, 350);
+		fighter->setFocus();
+		boss->setPos(100, 50);
+		lamp = startTimer(50);
 		this->setStyleSheet("QMainWindow {border-image: url(:/start/image/gw1.png);}");
 		ui->view->setStyleSheet("border-image: url(:/start/image/bg2.jpg)");
+
+		ui->progressBar->setRange(0, PLAYER_ORDINARY_MAXHEALTH);
+		ui->progressBar->setValue(PLAYER_ORDINARY_MAXHEALTH);
+		QObject::connect(fighter, SIGNAL(notify(int)), this, SLOT(OnNotify(int)));
+		isInit = true;
 		break;
 	case gamethree:
 		break;

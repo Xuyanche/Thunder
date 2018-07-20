@@ -109,7 +109,17 @@ Boss* createBoss(QGraphicsScene* scene, gamenumber game) {
 	Boss* newBoss = NULL;
 	QPixmaps tmp;
 	tmp.append(QPixmap(Boss_Ordinary_Image));
-	newBoss = new Boss(BOSS_ORDINARY_WHIDTH,BOSS_ORDINARY_HEIGHT,2,tmp,scene,0, PLAYER_ORDINARY_MAXHEALTH);
+	switch (game)
+	{
+	case gameone:newBoss = new Boss(BOSS_ORDINARY_WHIDTH, BOSS_ORDINARY_HEIGHT, 2, tmp, scene, 0, PLAYER_ORDINARY_MAXHEALTH);
+		break;
+	case gametwo:newBoss = new Boss(BOSS_ORDINARY_WHIDTH, BOSS_ORDINARY_HEIGHT, 2, tmp, scene, 0, BOSS_ORDINARY_MAXHEALTH + 100);
+		break;
+	case gamethree:newBoss = new Boss(BOSS_ORDINARY_WHIDTH, BOSS_ORDINARY_HEIGHT, 2, tmp, scene, 0, BOSS_ORDINARY_MAXHEALTH + 300);
+		break;
+	default:
+		break;
+	}
 
 	return newBoss;
 }
