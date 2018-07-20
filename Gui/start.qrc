@@ -28,5 +28,7 @@
         <file>image/resume.png</file>
         <file>image/stop.png</file>
         <file>image/enemyBullet_ordinary.png</file>
+        <file>image/exit.png</file>
+        <file>image/victory.png</file>
     </qresource>
 </RCC>

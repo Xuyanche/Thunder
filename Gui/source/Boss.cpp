@@ -113,7 +113,7 @@ Boss* createBoss(QGraphicsScene* scene, gamenumber game) {
 	{
 	case gameone:newBoss = new Boss(BOSS_ORDINARY_WHIDTH, BOSS_ORDINARY_HEIGHT, 2, tmp, scene, 0, PLAYER_ORDINARY_MAXHEALTH);
 		break;
-	case gametwo:newBoss = new Boss(BOSS_ORDINARY_WHIDTH, BOSS_ORDINARY_HEIGHT, 2, tmp, scene, 0, BOSS_ORDINARY_MAXHEALTH + 100);
+	case gametwo:newBoss = new Boss(BOSS_ORDINARY_WHIDTH, BOSS_ORDINARY_HEIGHT, 2, tmp, scene, 0, PLAYER_ORDINARY_MAXHEALTH);
 		break;
 	case gamethree:newBoss = new Boss(BOSS_ORDINARY_WHIDTH, BOSS_ORDINARY_HEIGHT, 2, tmp, scene, 0, BOSS_ORDINARY_MAXHEALTH + 300);
 		break;

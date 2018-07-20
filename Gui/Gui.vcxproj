@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="congratulation.cpp" />
     <ClCompile Include="game1.cpp" />
     <ClCompile Include="gameover.cpp" />
     <ClCompile Include="list.cpp" />
@@ -32,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gameover.h" />
+    <QtMoc Include="congratulation.h" />
     <ClInclude Include="include\boss.h" />
     <ClInclude Include="include\bullet.h" />
     <ClInclude Include="include\global.h" />
@@ -43,6 +45,7 @@
     <QtMoc Include="start.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="congratulation.ui" />
     <QtUic Include="game1.ui" />
     <QtUic Include="gameover.ui" />
     <QtUic Include="list.ui" />

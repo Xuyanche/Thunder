@@ -20,6 +20,7 @@ game1::game1(gamenumber game,QWidget *parent)
 	ui->progressBar->setTextVisible(false);
 	this->setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
 	isInit = false;
+	islastgame = false;
 }
 
 game1::~game1()
@@ -76,6 +77,7 @@ void game1::init()
 		ui->progressBar->setValue(PLAYER_ORDINARY_MAXHEALTH);
 		QObject::connect(fighter, SIGNAL(notify(int)), this, SLOT(OnNotify(int)));
 		isInit = true;
+		islastgame = true;
 		break;
 	case gamethree:
 		break;
@@ -112,12 +114,20 @@ void  game1::slt_playerDead()
 	emit showgameover();
 }
 void game1::slt_bossDead()
-{
+{   
 	this->hide();
-	emit show_next();
+	if (islastgame)
+	{
+		emit show_congratulation();
+	}
+	else
+	{
+		emit show_next();
+	}
+	
+	
 }
 void game1::OnNotify(int health)
 {
 	ui->progressBar->setValue(health);
-
 }

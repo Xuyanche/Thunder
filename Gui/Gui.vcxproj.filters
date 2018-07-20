@@ -57,6 +57,9 @@
     <ClCompile Include="gameover.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="congratulation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="start.qrc">
@@ -77,6 +80,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="gameover.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="congratulation.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -114,6 +120,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="gameover.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="congratulation.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

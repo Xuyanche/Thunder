@@ -30,10 +30,13 @@ signals:
 	void show_next();
 signals:
 	void showgameover();
+signals:
+	void show_congratulation();
 private:
 	void close();
 	int lamp;
 	bool isInit;
+	bool islastgame;
 	void init();
 	Ui::game1*ui;
 	QPushButton*backbutton;
