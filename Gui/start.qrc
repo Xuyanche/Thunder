@@ -2,8 +2,6 @@
     <qresource prefix="/start">
         <file>image/back.png</file>
         <file>image/background.png</file>
-        <file>image/boss.png</file>
-        <file>image/enemyBullet_ordinary.png</file>
         <file>image/enemyBullet_ordinary_boom.png</file>
         <file>image/friendBullet_ordinary.png</file>
         <file>image/list.png</file>
@@ -26,5 +24,9 @@
         <file>image/gw3.png</file>
         <file>image/gw4.png</file>
         <file>image/restart.png</file>
+        <file>image/boss.png</file>
+        <file>image/resume.png</file>
+        <file>image/stop.png</file>
+        <file>image/enemyBullet_ordinary.png</file>
     </qresource>
 </RCC>
