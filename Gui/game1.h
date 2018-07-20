@@ -24,8 +24,6 @@ slots:
 	void OnNotify(int health);
 	void slt_playerDead();
 	void slt_bossDead();
-	void on_gobutton_clicked_game1();
-	void on_stopbutton_clicked_game1();
 signals: 
 	void show_fromgame1();
 signals:

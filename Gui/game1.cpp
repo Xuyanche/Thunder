@@ -13,13 +13,8 @@ game1::game1(gamenumber game,QWidget *parent)
 	ui->setupUi(this);
 	ui->backbutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/back.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
 	ui->nextbutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/next.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
-	ui->backbutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/next.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
-	ui->gobutton->setStyleSheet("QPushButton{background:transparent;border-image:url(:/start/image/next.png)}""QPushButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
 	connect(ui->backbutton, SIGNAL(clicked(bool)), this, SLOT(on_backbutton_clicked_game1()));
 	connect(ui->nextbutton, SIGNAL(clicked(bool)), this, SLOT(on_nextbutton_clicked_game1()));
-	connect(ui->gobutton, SIGNAL(clicked(bool)), this, SLOT(on_gobutton_clicked_game1()));
-	connect(ui->stopbutton, SIGNAL(clicked(bool)), this, SLOT(on_stopbutton_clicked_game1()));
-
 	sence = new QGraphicsScene(10, 0, SCENEHEIGHT/2, SCENEWIDTH);
 	ui->view->setScene(sence);
 	ui->progressBar->setTextVisible(false);
@@ -116,20 +111,4 @@ void game1::OnNotify(int health)
 {
 	ui->progressBar->setValue(health);
 
-}
-void game1::on_gobutton_clicked_game1()
-{
-	if (lamp == startTimer(50))
-	{
-		return;
-	}
-	lamp = startTimer(50);
-}
-void game1::on_stopbutton_clicked_game1()
-{
-	if (lamp == 0)
-	{
-		return;
-	}
-	lamp = 0;
 }

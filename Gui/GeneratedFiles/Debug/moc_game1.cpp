@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_game1_t {
-    QByteArrayData data[14];
-    char stringdata0[217];
+    QByteArrayData data[12];
+    char stringdata0[163];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,18 +42,14 @@ QT_MOC_LITERAL(7, 91, 27), // "on_nextbutton_clicked_game1"
 QT_MOC_LITERAL(8, 119, 8), // "OnNotify"
 QT_MOC_LITERAL(9, 128, 6), // "health"
 QT_MOC_LITERAL(10, 135, 14), // "slt_playerDead"
-QT_MOC_LITERAL(11, 150, 12), // "slt_bossDead"
-QT_MOC_LITERAL(12, 163, 25), // "on_gobutton_clicked_game1"
-QT_MOC_LITERAL(13, 189, 27) // "on_stopbutton_clicked_game1"
+QT_MOC_LITERAL(11, 150, 12) // "slt_bossDead"
 
     },
     "game1\0show_fromgame1\0\0show_next\0"
     "showgameover\0receive_fromgame1\0"
     "on_backbutton_clicked_game1\0"
     "on_nextbutton_clicked_game1\0OnNotify\0"
-    "health\0slt_playerDead\0slt_bossDead\0"
-    "on_gobutton_clicked_game1\0"
-    "on_stopbutton_clicked_game1"
+    "health\0slt_playerDead\0slt_bossDead"
 };
 #undef QT_MOC_LITERAL
 
@@ -63,7 +59,7 @@ static const uint qt_meta_data_game1[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,19 +67,17 @@ static const uint qt_meta_data_game1[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   69,    2, 0x06 /* Public */,
-       3,    0,   70,    2, 0x06 /* Public */,
-       4,    0,   71,    2, 0x06 /* Public */,
+       1,    0,   59,    2, 0x06 /* Public */,
+       3,    0,   60,    2, 0x06 /* Public */,
+       4,    0,   61,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,   72,    2, 0x08 /* Private */,
-       6,    0,   73,    2, 0x08 /* Private */,
-       7,    0,   74,    2, 0x08 /* Private */,
-       8,    1,   75,    2, 0x08 /* Private */,
-      10,    0,   78,    2, 0x08 /* Private */,
-      11,    0,   79,    2, 0x08 /* Private */,
-      12,    0,   80,    2, 0x08 /* Private */,
-      13,    0,   81,    2, 0x08 /* Private */,
+       5,    0,   62,    2, 0x08 /* Private */,
+       6,    0,   63,    2, 0x08 /* Private */,
+       7,    0,   64,    2, 0x08 /* Private */,
+       8,    1,   65,    2, 0x08 /* Private */,
+      10,    0,   68,    2, 0x08 /* Private */,
+      11,    0,   69,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -95,8 +89,6 @@ static const uint qt_meta_data_game1[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    9,
-    QMetaType::Void,
-    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -118,8 +110,6 @@ void game1::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         case 6: _t->OnNotify((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 7: _t->slt_playerDead(); break;
         case 8: _t->slt_bossDead(); break;
-        case 9: _t->on_gobutton_clicked_game1(); break;
-        case 10: _t->on_stopbutton_clicked_game1(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -173,13 +163,13 @@ int game1::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 11;
+        _id -= 9;
     }
     return _id;
 }
