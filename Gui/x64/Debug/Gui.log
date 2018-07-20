@@ -1,7 +1,3 @@
-﻿  Moc'ing game1.h...
-  moc_game1.cpp
+﻿  Uic'ing game1.ui...
   game1.cpp
-  main.cpp
-  Boss.cpp
-  playerfighter.cpp
   Gui.vcxproj -> C:\Users\16287\Documents\GitHub\Thunder\x64\Debug\Gui.exe

@@ -29,6 +29,8 @@ public:
     QGraphicsView *view;
     QPushButton *backbutton;
     QPushButton *nextbutton;
+    QPushButton *gobutton;
+    QPushButton *stopbutton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -61,7 +63,13 @@ public:
         backbutton->setGeometry(QRect(470, 370, 111, 41));
         nextbutton = new QPushButton(centralwidget);
         nextbutton->setObjectName(QStringLiteral("nextbutton"));
-        nextbutton->setGeometry(QRect(350, 370, 121, 41));
+        nextbutton->setGeometry(QRect(360, 370, 111, 41));
+        gobutton = new QPushButton(centralwidget);
+        gobutton->setObjectName(QStringLiteral("gobutton"));
+        gobutton->setGeometry(QRect(470, 330, 111, 41));
+        stopbutton = new QPushButton(centralwidget);
+        stopbutton->setObjectName(QStringLiteral("stopbutton"));
+        stopbutton->setGeometry(QRect(360, 330, 111, 41));
         game1->setCentralWidget(centralwidget);
         menubar = new QMenuBar(game1);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -81,6 +89,8 @@ public:
         game1->setWindowTitle(QApplication::translate("game1", "MainWindow", nullptr));
         backbutton->setText(QString());
         nextbutton->setText(QString());
+        gobutton->setText(QString());
+        stopbutton->setText(QString());
     } // retranslateUi
 
 };
