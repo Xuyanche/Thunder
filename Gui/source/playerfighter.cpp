@@ -78,6 +78,7 @@ void PlayerFighter::hitCtrl()
 void PlayerFighter::destroy()
 {
 	deleteLater();
+	emit sig_fall();
 }
 
 void PlayerFighter::Attack(QGraphicsScene *ptrsence)

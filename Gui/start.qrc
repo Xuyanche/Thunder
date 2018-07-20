@@ -6,16 +6,18 @@
         <file>image/enemyBullet_ordinary.png</file>
         <file>image/enemyBullet_ordinary_boom.png</file>
         <file>image/friendBullet_ordinary.png</file>
-        <file>image/game1.jpg</file>
-        <file>image/game2.jpg</file>
         <file>image/list.png</file>
         <file>image/next.png</file>
         <file>image/people.png</file>
         <file>image/playerfighter.png</file>
         <file>image/quit.png</file>
         <file>image/start.png</file>
-        <file>image/startwid.bmp</file>
-        <file>image/startwid.png</file>
         <file>image/tital.png</file>
+        <file>image/game1.png</file>
+        <file>image/game2.png</file>
+        <file>image/game3.png</file>
+        <file>image/game4.png</file>
+        <file>image/startwid.png</file>
+        <file>image/over.png</file>
     </qresource>
 </RCC>

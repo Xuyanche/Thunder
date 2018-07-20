@@ -14,6 +14,8 @@ class FlyingObject : public QGraphicsObject {
 	Q_OBJECT
 signals:
 	void notify(int);
+signals:
+	void sig_fall();
 public:
 	FlyingObject(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent);
 	~FlyingObject();

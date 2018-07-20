@@ -15,6 +15,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -26,6 +27,8 @@ public:
     QWidget *centralwidget;
     QProgressBar *progressBar;
     QGraphicsView *view;
+    QPushButton *backbutton;
+    QPushButton *nextbutton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -53,6 +56,12 @@ public:
         view = new QGraphicsView(centralwidget);
         view->setObjectName(QStringLiteral("view"));
         view->setGeometry(QRect(10, 0, 281, 411));
+        backbutton = new QPushButton(centralwidget);
+        backbutton->setObjectName(QStringLiteral("backbutton"));
+        backbutton->setGeometry(QRect(470, 370, 111, 41));
+        nextbutton = new QPushButton(centralwidget);
+        nextbutton->setObjectName(QStringLiteral("nextbutton"));
+        nextbutton->setGeometry(QRect(350, 370, 121, 41));
         game1->setCentralWidget(centralwidget);
         menubar = new QMenuBar(game1);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -70,6 +79,8 @@ public:
     void retranslateUi(QMainWindow *game1)
     {
         game1->setWindowTitle(QApplication::translate("game1", "MainWindow", nullptr));
+        backbutton->setText(QString());
+        nextbutton->setText(QString());
     } // retranslateUi
 
 };

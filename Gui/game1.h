@@ -18,11 +18,15 @@ public:
 	void timerEvent(QTimerEvent* Event);
 private 
 slots:
-	void receivestart_fromgame1();
+	void receive_fromgame1();
 	void on_backbutton_clicked_game1();
+	void on_nextbutton_clicked_game1();
 	void OnNotify(int health);
+	void slt_playerDead();
 signals: 
-	void showstart_fromgame1();
+	void show_fromgame1();
+signals:
+	void show_next();
 	
 private:
 	void close();
