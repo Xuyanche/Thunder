@@ -43,3 +43,14 @@ bool FlyingObject::checkPos(int dx, int dy)
 	}
 	return poslegal;
 }
+
+
+bool FlyingObject::checkPos(QPointF newpos)
+{
+	bool poslegal = false;
+	if (newpos.rx() > -1 * width && newpos.rx() < SCENEHEIGHT&& newpos.ry() > -1 * height && newpos.ry() < SCENEHEIGHT) {
+		poslegal = true;
+	}
+	return poslegal;
+}
+

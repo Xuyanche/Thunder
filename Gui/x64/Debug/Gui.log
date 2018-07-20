@@ -1,11 +1,18 @@
 ﻿  Rcc'ing start.qrc...
-  moc_flyingObject.cpp
-  moc_game1.cpp
-  qrc_start.cpp
   game1.cpp
+  gameover.cpp
+  list.cpp
   main.cpp
   Boss.cpp
   Bullet.cpp
   FlyingObject.cpp
   playerfighter.cpp
-  Gui.vcxproj -> C:\Users\Lenovo\Documents\project\Thunder\x64\Debug\Gui.exe
+  start.cpp
+  moc_game1.cpp
+  moc_list.cpp
+  moc_gameover.cpp
+  moc_flyingObject.cpp
+  moc_start.cpp
+  qrc_start.cpp
+  LINK : 没有找到 D:\GitHub\Thunder\x64\Debug\\Gui.exe 或上一个增量链接没有生成它；正在执行完全链接
+  Gui.vcxproj -> D:\GitHub\Thunder\x64\Debug\Gui.exe

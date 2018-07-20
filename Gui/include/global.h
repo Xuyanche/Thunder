@@ -14,6 +14,7 @@
 #define BOSS_ORDINARY_WHIDTH 100
 #define BOSS_ORDINARY_HEIGHT 100
 #define BOSS_ORDINARY_SPEED 0
+#define BOSS_ORDINARY_ATTACKSPEED 50
 
 
 #define ENEMYBULLET_ORDINARY_SPEED 3
@@ -25,6 +26,11 @@
 #define FRIENDBULLET_ORDINARY_WIDTH 10
 #define FRIENDBULLET_ORDINARY_HEIGHT 10
 #define FRIENDBULLET_ORDINARY_DAMAGE 3
+
+
+#define CURVEBULLET_ANGLE_CHANGE 2
+#define ANGLEPOLICY_TURN_CONST 20
+
 
 #define PLAYER_ORDINARY_SPEED 3
 #define FIGHTER_ORDINARY_WIDTH 30
@@ -50,7 +56,7 @@ enum BelongTo {
 	Enemy, Nutural, Friend
 };
 enum BulletType {
-	Ordinary_Friend, Ordinary_Enemy
+	Ordinary_Friend, Ordinary_Enemy, Plus_Curve_Enemy, Minus_Curve_Enemy
 };
 
 typedef QList<QPixmap> QPixmaps;

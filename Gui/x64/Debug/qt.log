@@ -4,4 +4,4 @@ include\flyingObject.h|"C:\Users\Lenovo\Documents\project\Thunder\Gui\include\fl
 game1.ui|"C:\Users\Lenovo\Documents\project\Thunder\Gui\game1.ui" -o ".\GeneratedFiles\ui_game1.h"
 gameover.ui|"C:\Users\Lenovo\Documents\project\Thunder\Gui\gameover.ui" -o ".\GeneratedFiles\ui_gameover.h"
 list.ui|"C:\Users\Lenovo\Documents\project\Thunder\Gui\list.ui" -o ".\GeneratedFiles\ui_list.h"
-start.qrc|"C:\Users\Lenovo\Documents\project\Thunder\Gui\start.qrc" -o ".\GeneratedFiles\qrc_start.cpp" --name start
+start.qrc|"D:\GitHub\Thunder\Gui\start.qrc" -o ".\GeneratedFiles\qrc_start.cpp" --name start

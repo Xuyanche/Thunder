@@ -1,1 +1,1 @@
-Rcc'ing start.qrc...;D:\programfiles\QT\5.11.1\msvc2017_64\bin\rcc.exe;"C:\Users\Lenovo\Documents\project\Thunder\Gui\start.qrc" -o ".\GeneratedFiles\qrc_start.cpp" --name start
+Rcc'ing start.qrc...;C:\Qt\5.11.1\msvc2017_64\bin\rcc.exe;"D:\GitHub\Thunder\Gui\start.qrc" -o ".\GeneratedFiles\qrc_start.cpp" --name start

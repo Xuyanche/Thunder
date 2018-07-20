@@ -26,6 +26,7 @@ public:
 	
 	bool checkPos();
 	bool checkPos(int dx, int dy);
+	bool checkPos(QPointF newpos);
 
 	//x, y, z value is included in the qgraphicobject class
 	qreal width;

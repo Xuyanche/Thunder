@@ -5,10 +5,8 @@
 Bullet::Bullet(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pixs, QGraphicsScene *scene, QGraphicsItem* parent, qreal angle, int damagevalue, BelongTo belongvalue)
 	: FlyingObject(wvalue, hvalue, speed, pixs, scene, parent), damage(damagevalue), belong(belongvalue)
 {
-	xspeed = maxspeed * cos(angle);
-	yspeed = maxspeed * sin(angle);
-	if (belongvalue == Enemy)
-		parent = 0;
+	this->angle = angle;
+	parent = 0;
 	isHit = 0;
 }
 
@@ -59,15 +57,43 @@ void Bullet::advance(int)
 		return;
 	}
 
-	QPointF pos = scenePos();
-	pos.rx() += xspeed;
-	pos.ry() += yspeed;
-	if (checkPos(xspeed, yspeed) == true)
-		setPos(pos);
-	else 
-		destroy();
+	move();
+	
 	return;
 }
+
+
+
+void Bullet::move()
+{
+	QPointF pos;
+	switch (type) {
+	case Ordinary_Enemy:
+	case Ordinary_Friend:
+		pos.rx() += xspeed();
+		pos.ry() += yspeed();
+		break;
+	case Plus_Curve_Enemy:
+		angle += CURVEBULLET_ANGLE_CHANGE;
+		pos.rx() += xspeed();
+		pos.ry() += yspeed();
+		break;
+	case Minus_Curve_Enemy:
+		angle -= CURVEBULLET_ANGLE_CHANGE;
+		pos.rx() += xspeed();
+		pos.ry() += yspeed();
+	}
+	if (checkPos(pos) == true)
+		setPos(pos);
+	else
+		destroy();
+
+}
+
+
+
+
+
 
 QRectF Bullet::boundingRect() const
 {
@@ -89,6 +115,15 @@ void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 	//painter->drawEllipse(-1 * width / 2, -1 * height / 2, width, height);
 }
 
+qreal Bullet::xspeed()
+{
+	return maxspeed * cos(angle / 180 * CONSTANT_PI);
+}
+
+qreal Bullet::yspeed()
+{
+	return maxspeed * sin(angle / 180 * CONSTANT_PI);
+}
 
 Bullet* createBullet(BulletType typevalue, QGraphicsScene *scene, qreal anglevalue)
 {
@@ -111,8 +146,12 @@ Bullet* createBullet(BulletType typevalue, QGraphicsScene *scene, qreal angleval
 	default:
 		break;
 	}
-
+	newbullet->type = typevalue;
 	return newbullet;
 }
+
+
+
+
 
 
