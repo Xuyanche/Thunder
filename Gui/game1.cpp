@@ -19,6 +19,7 @@ game1::game1(gamenumber game,QWidget *parent)
 	connect(ui->nextbutton, SIGNAL(clicked(bool)), this, SLOT(on_nextbutton_clicked_game1()));
 	connect(ui->resumebutton, SIGNAL(clicked(bool)), this, SLOT(on_resumebutton_clicked_game1()));
 	connect(ui->stopbutton, SIGNAL(clicked(bool)), this, SLOT(on_stopbutton_clicked_game1()));
+	ui->nextbutton->setEnabled(false);
 	sence = new QGraphicsScene(10, 0, SCENEHEIGHT/2, SCENEWIDTH);
 	ui->view->setScene(sence);
 	ui->progressBar->setTextVisible(false);
@@ -40,6 +41,7 @@ void game1::on_backbutton_clicked_game1()
 void game1::on_nextbutton_clicked_game1()
 {  
 	this->hide();
+	ui->nextbutton->setEnabled(false);
 	emit show_next();
 	
 }
@@ -119,15 +121,16 @@ void  game1::slt_playerDead()
 }
 void game1::slt_bossDead()
 {   
-	this->hide();
+	
 	if (islastgame)
-	{
+	{   
+		this->hide();
 		emit show_congratulation();
 		islastgame = false;
 	}
 	else
 	{
-		emit show_next();
+		ui->nextbutton->setEnabled(true);
 	}
 	
 	

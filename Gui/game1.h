@@ -7,6 +7,7 @@
 #include"include/boss.h"
 #include"qgraphicsscene.h"
 #include"qgraphicsview.h"
+#include "QtMultimedia/qsound.h"
 namespace Ui { class game1; };
 class game1 : public QMainWindow
 {
@@ -43,5 +44,6 @@ private:
 	Ui::game1*ui;
 	QPushButton*backbutton;
 	QGraphicsScene* sence;
+	QSound *sound;
 	gamenumber game;
 	};

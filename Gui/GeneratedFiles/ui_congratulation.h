@@ -32,7 +32,7 @@ public:
         congratulation->resize(604, 300);
         label = new QLabel(congratulation);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(80, 20, 421, 151));
+        label->setGeometry(QRect(80, 40, 371, 131));
         label->setPixmap(QPixmap(QString::fromUtf8(":/start/image/victory.png")));
         label->setScaledContents(true);
         quitbutton = new QPushButton(congratulation);

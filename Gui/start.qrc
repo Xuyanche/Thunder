@@ -30,5 +30,7 @@
         <file>image/enemyBullet_ordinary.png</file>
         <file>image/exit.png</file>
         <file>image/victory.png</file>
+        <file>music/01. 永夜抄　～ Eastern Night.mp3</file>
+        <file>music/02. 幻視の夜　～ Ghostly Eyes.mp3</file>
     </qresource>
 </RCC>
