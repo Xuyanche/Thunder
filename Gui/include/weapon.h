@@ -1,5 +1,4 @@
 #pragma once
-#include "global.h"
 #include "bullet.h"
 
 
@@ -8,11 +7,15 @@ enum angleChangePolicy {
 };
 
 
+enum weaponType {
+	weaponType_normal, waponType_Curve
+};
+
 
 
 class Weapon {
 public:
-	Weapon(BulletType typeValue, int attackspeedvalue, angleChangePolicy policy, FlyingObject* parentptr, int OffsetValue = 0);
+	Weapon(BulletType typeValue, int attackspeedvalue, angleChangePolicy policy, FlyingObject* parentptr, int OffsetValue, qreal startangle);
 	
 
 	void attack();
@@ -30,7 +33,7 @@ public:
 	FlyingObject *parent;
 
 
-	friend Weapon* createWeapon(int weaponType, FlyingObject* parentptr, int offset = 0);
+	friend Weapon* createWeapon(weaponType weaponTypeValue, FlyingObject* parentptr, int offset, qreal startangle);
 
 
 };

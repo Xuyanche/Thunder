@@ -1,16 +1,14 @@
 #include "../include/weapon.h"
 
-Weapon::Weapon(BulletType typeValue, int attackspeedvalue, angleChangePolicy policy, FlyingObject* parentptr, int OffsetValue = 0)
+Weapon::Weapon(BulletType typeValue, int attackspeedvalue, angleChangePolicy policy, FlyingObject* parentptr, int OffsetValue, qreal startangle)
 {
 	attackSpeed = attackspeedvalue;
 	bulletType = typeValue;
 	parent = parentptr;
 	offset = OffsetValue;
+	angle = startangle;
 	anglePolicy = policy;
 }
-
-
-
 
 
 
@@ -54,15 +52,15 @@ QGraphicsScene* Weapon::getScene()
 }
 
 
-Weapon* createWeapon(int weaponType, FlyingObject* parentptr, int offsetValue)
+Weapon* createWeapon(weaponType weaponTypeValue, FlyingObject* parentptr, int offsetValue, qreal startangle)
 {
 	Weapon* newWeapon;
-	switch (weaponType)
+	switch (weaponTypeValue)
 	{
-	case 1:
-		newWeapon = new Weapon(Ordinary_Enemy, BOSS_ORDINARY_ATTACKSPEED, AnglePolicy_Steady, parentptr, offsetValue);
-	case 2:
-		newWeapon = new Weapon(Plus_Curve_Enemy, BOSS_ORDINARY_ATTACKSPEED, AnglePolicy_Turn, parentptr, offsetValue);
+	case weaponType_normal:
+		newWeapon = new Weapon(Ordinary_Enemy, BOSS_ORDINARY_ATTACKSPEED, AnglePolicy_Steady, parentptr, offsetValue, startangle);
+	case waponType_Curve:
+		newWeapon = new Weapon(Plus_Curve_Enemy, BOSS_ORDINARY_ATTACKSPEED, AnglePolicy_Turn, parentptr, offsetValue, startangle);
 	default:
 		break;
 	}

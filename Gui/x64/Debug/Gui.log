@@ -1,18 +1,1 @@
-﻿  Rcc'ing start.qrc...
-  game1.cpp
-  gameover.cpp
-  list.cpp
-  main.cpp
-  Boss.cpp
-  Bullet.cpp
-  FlyingObject.cpp
-  playerfighter.cpp
-  start.cpp
-  moc_game1.cpp
-  moc_list.cpp
-  moc_gameover.cpp
-  moc_flyingObject.cpp
-  moc_start.cpp
-  qrc_start.cpp
-  LINK : 没有找到 D:\GitHub\Thunder\x64\Debug\\Gui.exe 或上一个增量链接没有生成它；正在执行完全链接
-  Gui.vcxproj -> D:\GitHub\Thunder\x64\Debug\Gui.exe
+﻿LINK : fatal error LNK1168: 无法打开 D:\GitHub\Thunder\x64\Debug\\Gui.exe 进行写入

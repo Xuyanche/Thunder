@@ -3,12 +3,13 @@
 
 
 
-Boss::Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue)
+Boss::Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue, QList<Weapon*> weaponsValue)
 	:FlyingObject(wvalue, hvalue, speed, pic, scene, parent)
 {
 	health = healthvalue;
 	angle = 0;
 	step = 0;
+	weapons = weaponsValue;
 	setZValue(1);
 }
 
@@ -57,6 +58,11 @@ void Boss::destroy()
 
 void Boss::Attack(QGraphicsScene *ptrsence)
 {
+
+	for (int i = 0; i < weapons.size(); i++){
+		weapons.at(i)->attack();
+	}
+	/*
 	int ShootAngle;
 	Bullet* b = NULL;
 	for (ShootAngle =angle; ShootAngle <= 180; ShootAngle += 36) {
@@ -68,13 +74,12 @@ void Boss::Attack(QGraphicsScene *ptrsence)
 	}
 	angle += 5;
 	if (angle >= 36)
-		angle -= 36;
+		angle -= 36;*/
 }
 
 void Boss::advance(int) {
 	step++;
-	if (step%ACTION_FREQUENCY == 0)
-		Attack(scene());
+	Attack(scene());
 	if (step >= 100 * ACTION_FREQUENCY)
 		step = 0;
 	hitCtrl();
@@ -109,7 +114,34 @@ Boss* createBoss(QGraphicsScene* scene, gamenumber game) {
 	Boss* newBoss = NULL;
 	QPixmaps tmp;
 	tmp.append(QPixmap(Boss_Ordinary_Image));
-	newBoss = new Boss(BOSS_ORDINARY_WHIDTH,BOSS_ORDINARY_HEIGHT,2,tmp,scene,0, PLAYER_ORDINARY_MAXHEALTH);
+	QList<Weapon*> weaponlist;
+	Weapon* tmpweapon;
+	//1
+	tmpweapon = createWeapon(weaponType_normal, NULL, 0, 0);
+	tmpweapon->anglePolicy = AnglePolicy_Turn;
+	weaponlist.append(tmpweapon);
+	//2
+	tmpweapon = NULL;
+	tmpweapon = createWeapon(weaponType_normal, NULL, 0, 45);
+	tmpweapon->anglePolicy = AnglePolicy_Turn;
+	weaponlist.append(tmpweapon); 
+	//3
+	tmpweapon = NULL;
+	tmpweapon = createWeapon(weaponType_normal, NULL, 0, 90);
+	tmpweapon->anglePolicy = AnglePolicy_Turn;
+	weaponlist.append(tmpweapon);
+	//4
+	tmpweapon = NULL;
+	tmpweapon = createWeapon(weaponType_normal, NULL, 0, 135);
+	tmpweapon->anglePolicy = AnglePolicy_Turn;
+	weaponlist.append(tmpweapon);
+	//5
+	tmpweapon = NULL;
+	tmpweapon = createWeapon(weaponType_normal, NULL, 0, 135);
+	tmpweapon->anglePolicy = AnglePolicy_Turn;
+	weaponlist.append(tmpweapon);
+
+	newBoss = new Boss(BOSS_ORDINARY_WHIDTH,BOSS_ORDINARY_HEIGHT,2,tmp,scene,0, PLAYER_ORDINARY_MAXHEALTH, weaponlist);
 
 	return newBoss;
 }

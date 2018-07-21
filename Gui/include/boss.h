@@ -1,14 +1,16 @@
 #pragma once
 #include <ctime>
+#include <qlist.h>
 #include "flyingObject.h"
 #include "bullet.h"
 #include "global.h"
+#include "weapon.h"
 
 class Boss :public FlyingObject
 { 
 
 public:
-	Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent ,int healthvalue);
+	Boss(qreal wvalue, qreal hvalue, qreal speed, const QPixmaps &pic, QGraphicsScene *scene, QGraphicsItem* parent, int healthvalue, QList<Weapon*> weaponsValue);
 	~Boss();
 
 	void hitCtrl();
@@ -27,6 +29,7 @@ private:
 	int health;
 	int angle;
 	uint step;
+	QList<Weapon*> weapons;
 
 	friend Boss* createBoss(QGraphicsScene *scene, gamenumber game);
 
