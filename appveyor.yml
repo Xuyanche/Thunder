@@ -6,10 +6,9 @@ branches:
   except:
     - master
 
-
-
+image: Visual Studio 2017
 enviroment:
-  image: Visual Studio 2017
+  
   matrix:
     - QTDIR: C:\Qt\5.11.1\msvc2017_64
 
