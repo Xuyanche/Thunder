@@ -23,7 +23,7 @@ public:
     {
         if (list->objectName().isEmpty())
             list->setObjectName(QStringLiteral("list"));
-        list->resize(400, 315);
+        list->resize(411, 107);
 
         retranslateUi(list);
 

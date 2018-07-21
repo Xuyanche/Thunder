@@ -4,13 +4,13 @@
 #include"QPushButton"
 namespace Ui { class list; };
 
-class list : public QDialog
+class List : public QDialog
 {
 	Q_OBJECT
 
 public:
-	list(QWidget *parent = Q_NULLPTR);
-	~list();
+	List(QWidget *parent = Q_NULLPTR);
+	~List();
 private
 slots:
 	void receivestart_fromlist();

@@ -23,7 +23,7 @@ public:
     QPushButton *startbutton;
     QLabel *tital;
     QPushButton *listbutton;
-    QPushButton *pushbutton;
+    QPushButton *peoplebutton;
     QPushButton *quitbutton;
 
     void setupUi(QDialog *startClass)
@@ -33,19 +33,19 @@ public:
         startClass->resize(600, 400);
         startbutton = new QPushButton(startClass);
         startbutton->setObjectName(QStringLiteral("startbutton"));
-        startbutton->setGeometry(QRect(230, 160, 151, 41));
+        startbutton->setGeometry(QRect(230, 150, 151, 51));
         tital = new QLabel(startClass);
         tital->setObjectName(QStringLiteral("tital"));
-        tital->setGeometry(QRect(190, 70, 241, 61));
+        tital->setGeometry(QRect(170, 60, 271, 81));
         listbutton = new QPushButton(startClass);
         listbutton->setObjectName(QStringLiteral("listbutton"));
-        listbutton->setGeometry(QRect(230, 210, 151, 41));
-        pushbutton = new QPushButton(startClass);
-        pushbutton->setObjectName(QStringLiteral("pushbutton"));
-        pushbutton->setGeometry(QRect(230, 260, 151, 41));
+        listbutton->setGeometry(QRect(230, 200, 151, 51));
+        peoplebutton = new QPushButton(startClass);
+        peoplebutton->setObjectName(QStringLiteral("peoplebutton"));
+        peoplebutton->setGeometry(QRect(230, 250, 151, 51));
         quitbutton = new QPushButton(startClass);
         quitbutton->setObjectName(QStringLiteral("quitbutton"));
-        quitbutton->setGeometry(QRect(550, 0, 51, 51));
+        quitbutton->setGeometry(QRect(560, 0, 41, 41));
 
         retranslateUi(startClass);
 
@@ -58,7 +58,7 @@ public:
         startbutton->setText(QString());
         tital->setText(QString());
         listbutton->setText(QString());
-        pushbutton->setText(QString());
+        peoplebutton->setText(QString());
         quitbutton->setText(QString());
     } // retranslateUi
 

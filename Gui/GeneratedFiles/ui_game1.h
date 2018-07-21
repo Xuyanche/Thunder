@@ -15,6 +15,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -26,6 +27,10 @@ public:
     QWidget *centralwidget;
     QProgressBar *progressBar;
     QGraphicsView *view;
+    QPushButton *backbutton;
+    QPushButton *nextbutton;
+    QPushButton *resumebutton;
+    QPushButton *stopbutton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,10 +44,32 @@ public:
         progressBar = new QProgressBar(centralwidget);
         progressBar->setObjectName(QStringLiteral("progressBar"));
         progressBar->setGeometry(QRect(310, 10, 261, 21));
-        progressBar->setValue(24);
+        progressBar->setStyleSheet(QLatin1String("QProgressBar{\n"
+"        border: none;\n"
+"        color: white;\n"
+"        text-align: center;\n"
+"        background: none;\n"
+"}\n"
+"QProgressBar::chunk {\n"
+"        border: none;\n"
+"        background: rgb(255, 0, 0);\n"
+"}"));
+        progressBar->setValue(40);
         view = new QGraphicsView(centralwidget);
         view->setObjectName(QStringLiteral("view"));
         view->setGeometry(QRect(10, 0, 281, 411));
+        backbutton = new QPushButton(centralwidget);
+        backbutton->setObjectName(QStringLiteral("backbutton"));
+        backbutton->setGeometry(QRect(470, 370, 111, 41));
+        nextbutton = new QPushButton(centralwidget);
+        nextbutton->setObjectName(QStringLiteral("nextbutton"));
+        nextbutton->setGeometry(QRect(360, 370, 111, 41));
+        resumebutton = new QPushButton(centralwidget);
+        resumebutton->setObjectName(QStringLiteral("resumebutton"));
+        resumebutton->setGeometry(QRect(470, 330, 111, 41));
+        stopbutton = new QPushButton(centralwidget);
+        stopbutton->setObjectName(QStringLiteral("stopbutton"));
+        stopbutton->setGeometry(QRect(360, 330, 111, 41));
         game1->setCentralWidget(centralwidget);
         menubar = new QMenuBar(game1);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -60,6 +87,10 @@ public:
     void retranslateUi(QMainWindow *game1)
     {
         game1->setWindowTitle(QApplication::translate("game1", "MainWindow", nullptr));
+        backbutton->setText(QString());
+        nextbutton->setText(QString());
+        resumebutton->setText(QString());
+        stopbutton->setText(QString());
     } // retranslateUi
 
 };
