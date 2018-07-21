@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/start">
+        <file>image/back.png</file>
+        <file>image/background.png</file>
+        <file>image/enemyBullet_ordinary_boom.png</file>
+        <file>image/friendBullet_ordinary.png</file>
+        <file>image/list.png</file>
+        <file>image/next.png</file>
+        <file>image/people.png</file>
+        <file>image/playerfighter.png</file>
+        <file>image/quit.png</file>
+        <file>image/start.png</file>
+        <file>image/tital.png</file>
+        <file>image/startwid.png</file>
+        <file>image/over.png</file>
+        <file>image/bg1.jpg</file>
+        <file>image/bg2.jpg</file>
+        <file>image/gameover.png</file>
+        <file>image/gw1.png</file>
+        <file>image/gw2.png</file>
+        <file>image/restart.png</file>
+        <file>image/boss.png</file>
+        <file>image/resume.png</file>
+        <file>image/stop.png</file>
+        <file>image/enemyBullet_ordinary.png</file>
+        <file>image/exit.png</file>
+        <file>image/victory.png</file>
+        <file>music/01.wav</file>
+        <file>music/02.wav</file>
+    </qresource>
+</RCC>
