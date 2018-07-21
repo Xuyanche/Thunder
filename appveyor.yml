@@ -1,4 +1,10 @@
 
+branches:
+  # whitelist
+  only:
+    - wjt
+
+
 image: Visual Studio 2017
 
 matrix:
