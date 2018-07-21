@@ -7,8 +7,8 @@ branches:
     - master
 
 image: Visual Studio 2017
-enviroment:
-  
+
+environment:
   matrix:
     - QTDIR: C:\Qt\5.11.1\msvc2017_64
 
