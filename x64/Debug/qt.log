@@ -1,0 +1,3 @@
+start.qrc|"C:\Users\16287\source\repos\Gui\Gui\start.qrc" -o ".\GeneratedFiles\qrc_start.cpp" --name start
+start.ui|"C:\Users\16287\source\repos\Gui\Gui\start.ui" -o ".\GeneratedFiles\ui_start.h"
+start.h|"C:\Users\16287\source\repos\Gui\Gui\start.h" -o ".\GeneratedFiles\Debug\moc_start.cpp" "-I.\GeneratedFiles" "-I." "-IC:\Qt\5.11.0\msvc2017_64\include" "-I.\GeneratedFiles\Debug" "-IC:\Qt\5.11.0\msvc2017_64\include\QtCore" "-IC:\Qt\5.11.0\msvc2017_64\include\QtGui" "-IC:\Qt\5.11.0\msvc2017_64\include\QtANGLE" "-IC:\Qt\5.11.0\msvc2017_64\include\QtUiTools" "-IC:\Qt\5.11.0\msvc2017_64\include\QtWidgets" -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_UITOOLS_LIB -DQT_WIDGETS_LIB
