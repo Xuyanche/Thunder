@@ -3,6 +3,8 @@ branches:
   # whitelist
   only:
     - wjt
+  except:
+    - master
 
 
 image: Visual Studio 2017
